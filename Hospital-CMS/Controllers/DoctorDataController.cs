@@ -17,6 +17,7 @@ namespace Hospital_CMS.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/DoctorData/ListDoctors
+        //comment
         [HttpGet]
         public IEnumerable<DoctorDto> ListDoctors()
         {
