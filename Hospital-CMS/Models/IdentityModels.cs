@@ -29,10 +29,16 @@ namespace Hospital_CMS.Models
 
         public DbSet<Doctor> Doctors { get; set; }
 
+        // Add Patient entity in our system
+
+        public DbSet<Patient> Patients { get; set; }
 
         //add specilization entity in our system
 
         public DbSet<Specilization> Specilization { get; set; }
+
+        //add Room entity to our system
+        public DbSet<Room> Rooms { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -234,3 +234,6 @@ C:\Users\RACHANA AMIN\Desktop\HTTP-5212\C# ASP.NET\Hospital-CMS\Hospital-CMS\obj
 C:\Users\RACHANA AMIN\Desktop\HTTP-5212\C# ASP.NET\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.CopyComplete
 C:\Users\RACHANA AMIN\Desktop\HTTP-5212\C# ASP.NET\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.dll
 C:\Users\RACHANA AMIN\Desktop\HTTP-5212\C# ASP.NET\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.pdb
+C:\Users\RACHANA AMIN\Desktop\HTTP-5212\C# ASP.NET\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.patients.resources
+C:\Users\RACHANA AMIN\Desktop\HTTP-5212\C# ASP.NET\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.rooms.resources
+C:\Users\RACHANA AMIN\Desktop\HTTP-5212\C# ASP.NET\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.patientroom.resources
