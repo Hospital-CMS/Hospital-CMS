@@ -33,6 +33,12 @@ namespace Hospital_CMS.Models
         //add specilization entity in our system
 
         public DbSet<Specilization> Specilization { get; set; }
+        
+        //add appointment entity in our system
+        public DbSet<Appointment> Appointments { get; set; }
+        
+        //add discharge entity in our system
+        public DbSet<Discharge> Discharges { get; set; }
 
         public static ApplicationDbContext Create()
         {
