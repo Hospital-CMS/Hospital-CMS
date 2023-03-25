@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Hospital_CMS.Models;
+using System.Diagnostics;
 
 namespace Hospital_CMS.Controllers
 {
@@ -17,7 +18,6 @@ namespace Hospital_CMS.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/PatientData/ListPatients
-        //Patient
         //curl https://localhost:44370/api/patientdata/listpatients
         [HttpGet]
         public IEnumerable<PatientDto> ListPatients()
@@ -42,31 +42,56 @@ namespace Hospital_CMS.Controllers
         }
 
         // GET: api/PatientData/FindPatient/5
+        //curl https://localhost:44370/api/patientdata/findpatient/2
         [ResponseType(typeof(Patient))]
         [HttpGet]
         public IHttpActionResult FindPatient(int id)
         {
-            Patient patient = db.Patients.Find(id);
-            if (patient == null)
+            Patient Patient = db.Patients.Find(id);
+            PatientDto PatientDto = new PatientDto()
+            {
+                PatientId = Patient.PatientId,
+                PFName = Patient.PFName,
+                PLName = Patient.PLName,
+                Gender = Patient.Gender,
+                BirthDate = Patient.BirthDate,
+                HealthcardNo = Patient.HealthcardNo,
+                ContactNo = Patient.ContactNo,
+                RoomNo = Patient.Room.RoomNo,
+                RoomType = Patient.Room.RoomType
+            };
+            if (Patient == null)
             {
                 return NotFound();
             }
 
-            return Ok(patient);
+            return Ok(PatientDto);
         }
 
         // POST: api/PatientData/UpdatePatient/5
+        //curl -d @patient.json -H "Content-type:application/json" "https://localhost:44370/api/patientdata/updatepatient/6"
         [ResponseType(typeof(void))]
         [HttpPost]
         public IHttpActionResult UpdatePatient(int id, Patient patient)
         {
+            Debug.WriteLine("I have reached the update patient method!");
             if (!ModelState.IsValid)
             {
+                Debug.WriteLine("Model state is invalid");
                 return BadRequest(ModelState);
             }
 
             if (id != patient.PatientId)
             {
+                Debug.WriteLine("ID mismatch");
+                Debug.WriteLine("GET parameter" + id);
+                Debug.WriteLine("POST parameter" + patient.PatientId);
+                Debug.WriteLine("POST parameter" + patient.PFName);
+                Debug.WriteLine("POST parameter" + patient.PLName);
+                Debug.WriteLine("POST parameter" + patient.Gender);
+                Debug.WriteLine("POST parameter" + patient.BirthDate);
+                Debug.WriteLine("POST parameter" + patient.HealthcardNo);
+                Debug.WriteLine("POST parameter" + patient.ContactNo);
                 return BadRequest();
             }
 
@@ -80,6 +105,7 @@ namespace Hospital_CMS.Controllers
             {
                 if (!PatientExists(id))
                 {
+                    Debug.WriteLine("Patient not found");
                     return NotFound();
                 }
                 else
@@ -88,10 +114,12 @@ namespace Hospital_CMS.Controllers
                 }
             }
 
+            Debug.WriteLine("None of the conditions triggered");
             return StatusCode(HttpStatusCode.NoContent);
         }
 
         // POST: api/PatientData/AddPatient
+        //curl -d @patient.json -H "Content-type:application/json" https://localhost:44370/api/patientdata/addpatient
         [ResponseType(typeof(Patient))]
         [HttpPost]
         public IHttpActionResult AddPatient(Patient patient)
@@ -108,6 +136,7 @@ namespace Hospital_CMS.Controllers
         }
 
         // POST: api/PatientData/DeletePatient/5
+        //curl -d "" https://localhost:44370/api/patientdata/deletepatient/2
         [ResponseType(typeof(Patient))]
         [HttpPost]
         public IHttpActionResult DeletePatient(int id)
@@ -121,7 +150,7 @@ namespace Hospital_CMS.Controllers
             db.Patients.Remove(patient);
             db.SaveChanges();
 
-            return Ok(patient);
+            return Ok();
         }
 
         protected override void Dispose(bool disposing)
