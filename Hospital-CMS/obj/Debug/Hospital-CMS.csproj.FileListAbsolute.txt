@@ -80,6 +80,8 @@ C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Web.WebPages.De
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Web.WebPages.dll
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Web.WebPages.Razor.dll
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\WebGrease.dll
+C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\EntityFramework.xml
+C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\EntityFramework.SqlServer.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Web.Helpers.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Web.Mvc.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Web.Optimization.xml
@@ -92,8 +94,6 @@ C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\Antlr3.Runtime.pdb
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Net.Http.Formatting.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Web.Http.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\System.Web.Http.WebHost.xml
-C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\EntityFramework.xml
-C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\EntityFramework.SqlServer.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -108,11 +108,12 @@ C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\Microsoft.Owin.Securit
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.AssemblyReference.cache
+C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.doctors.resources
+C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.specilization.resources
+C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.doctorspecilization.resources
+C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.GenerateResource.cache
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.CoreCompileInputs.cache
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.CopyComplete
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.dll
 C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.pdb
-C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.doctors.resources
-C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.GenerateResource.cache
-C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.specilization.resources
-C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.doctorspecilization.resources
+C:\Users\kruna\source\repos\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.doctorsupdate.resources

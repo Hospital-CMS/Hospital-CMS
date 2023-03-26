@@ -17,7 +17,7 @@ namespace Hospital_CMS.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/SpecilizationData/ListSpecilization
-        //comments
+        //curl https://localhost:44370/api/SpecilizationData/ListSpecilization
         [HttpGet]
         public IEnumerable<SpecilizationDto> ListSpecilization()
         {
@@ -34,6 +34,7 @@ namespace Hospital_CMS.Controllers
         }
 
         // GET: api/SpecilizationData/FindSpecilization/5
+        //curl "https://localhost:44370/api/SpecilizationData/FindSpecilization/1"
         [ResponseType(typeof(Specilization))]
         [HttpGet]
 
@@ -49,6 +50,7 @@ namespace Hospital_CMS.Controllers
         }
 
         // POST: api/SpecilizationData/UpdateSpecilization/5
+        //curl -d @specilization.json -H "Content-type:application/json" "https://localhost:44370/api/SpecilizationData/UpdateSpecilization/3"
         [ResponseType(typeof(void))]
         [HttpPost]
         public IHttpActionResult UpdateSpecilization(int id, Specilization specilization)
@@ -85,6 +87,7 @@ namespace Hospital_CMS.Controllers
         }
 
         // POST: api/SpecilizationData/AddSpecilization
+        //curl -d @specilization.json -H "Content-type:application/json" https://localhost:44370/api/SpecilizationData/AddSpecilization
         [ResponseType(typeof(Specilization))]
         [HttpPost]
         public IHttpActionResult AddSpecilization(Specilization specilization)
@@ -101,6 +104,7 @@ namespace Hospital_CMS.Controllers
         }
 
         // POST: api/SpecilizationData/DeleteSpecilization/5
+        //curl -d "" https://localhost:44370/api/SpecilizationData/DeleteSpecilization/3
         [ResponseType(typeof(Specilization))]
         [HttpPost]
         public IHttpActionResult DeleteSpecilization(int id)

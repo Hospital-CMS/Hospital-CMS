@@ -1,0 +1,9 @@
+﻿{
+  "DoctorId": 3,
+  "DoctorFirstname": "Disa",
+  "DoctorLastname": "Shahh",
+  "Gender": "Female",
+  "LicenceNo": 234567,
+  "ContactNo": 4372486656,
+  "SpecilizationId":1
+}

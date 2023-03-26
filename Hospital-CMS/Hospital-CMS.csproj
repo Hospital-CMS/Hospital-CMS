@@ -200,6 +200,10 @@
     <Compile Include="Migrations\202303190319241_doctor-specilization.Designer.cs">
       <DependentUpon>202303190319241_doctor-specilization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303252327495_doctors update.cs" />
+    <Compile Include="Migrations\202303252327495_doctors update.Designer.cs">
+      <DependentUpon>202303252327495_doctors update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -218,8 +222,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <None Include="json\doctor.json" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="json\specilization.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303190319241_doctor-specilization.resx">
       <DependentUpon>202303190319241_doctor-specilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303252327495_doctors update.resx">
+      <DependentUpon>202303252327495_doctors update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
