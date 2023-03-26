@@ -17,7 +17,7 @@ namespace Hospital_CMS.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/DoctorData/ListDoctors
-        //comments
+        //curl https://localhost:44370/api/DoctorData/ListDoctors
 
         [HttpGet]
         public IEnumerable<DoctorDto> ListDoctors()
@@ -40,6 +40,7 @@ namespace Hospital_CMS.Controllers
         }
 
         // GET: api/DoctorData/FindDoctor/5
+        // curl "https://localhost:44370/api/DoctorData/FindDoctor/1"
         [ResponseType(typeof(Doctor))]
         [HttpGet]
         public IHttpActionResult FindDoctor(int id)
@@ -54,6 +55,7 @@ namespace Hospital_CMS.Controllers
         }
 
         // POST: api/DoctorData/UpdateDoctor/5
+        //curl -d @doctor.json -H "Content-type:application/json" "https://localhost:44370/api/DoctorData/updateDoctor/3"
         [ResponseType(typeof(void))]
         public IHttpActionResult UpdateDoctor(int id, Doctor doctor)
         {
@@ -89,6 +91,7 @@ namespace Hospital_CMS.Controllers
         }
 
         // POST: api/DoctorData/AddDoctor
+        //curl -d @doctor.json -H "Content-type:application/json" https://localhost:44370/api/DoctorData/AddDoctor
         [ResponseType(typeof(Doctor))]
         [HttpPost]
         public IHttpActionResult AddDoctor(Doctor doctor)
