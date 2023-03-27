@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<a class="navlink" style="border: 1px solid black; padding: 10px;  margin:10px;" ; href="/Department/List">Go Back To List </a>
+
+<form action="/Department/Update/@Model.DepartmentID" method="POST" style="margin-top:30px;">
+    <div style="display:none;">
+
+
+        <input type="number" name="DepartmentID" value="@Model.DepartmentID" />
+    </div>
+    <div>
+        <label>Department Name:</label> <input type="text" name="DepartmentName" value="@Model.DepartmentName" />
+    </div>
+    <div>
+        <label>Service:</label> <input type="text" name="Service" value="@Model.Service" />
+    </div>
+    <div>
+        <label>Donor ID:</label> <input type="number" name="DonorID" value="@Model.DonorID" />
+    </div>
+    <div>
+        <label>Doctor ID:</label> <input type="number" name="DoctorId" value="@Model.DoctorId" />
+    </div>
+
+
+
+    <div>
+        <input type="submit" value="Update Department" />
+
+    </div>
+</form>

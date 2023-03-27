@@ -34,6 +34,16 @@ namespace Hospital_CMS.Models
 
         public DbSet<Specilization> Specilization { get; set; }
 
+
+
+
+        //add department entity in our system
+
+        public DbSet<Department> Departments { get; set; }
+
+        //add donor entity in our system
+        public DbSet<Donor> Donors { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

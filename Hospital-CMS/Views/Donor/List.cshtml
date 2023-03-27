@@ -1,0 +1,22 @@
+﻿
+@model IEnumerable<Hospital_CMS.Models.DonorDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+
+<nav class="navlink">
+    <a style="border: 1px solid black; padding: 10px;" href="/Donor/New">New Department</a>
+</nav>
+@foreach (var donor in Model)
+{
+    <h2><a href="/Donor/Details/@donor.DonorID">@donor.FirstName @donor.LastName</a></h2>
+    <div>Contact: @donor.Contact</div>
+    <div>Address: @donor.Address</div>
+    <div>Value: @donor.Value</div>
+
+
+}
+

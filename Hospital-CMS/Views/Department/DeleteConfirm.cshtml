@@ -1,0 +1,18 @@
+﻿
+@model Hospital_CMS.Models.DepartmentDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>DeleteConfirm</h2>
+
+<h2>Are you sure you want to delete this Department?</h2>
+<a href="/Department/List">Cancel</a>
+<h2>@Model.DepartmentName</h2>
+<div>Service: @Model.Service</div>
+<div>Donor Name: @Model.FirstName @Model.LastName</div>
+<div>Doctor Name: @Model.DoctorFirstname @Model.DoctorLastname</div>
+<form action="/Department/Delete/@Model.DepartmentID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+
+</form>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Hospital_CMS.Models.DepartmentDto>
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<a class="navlink" style="border: 1px solid black; padding: 10px; color: green; " ; href="/Department/List">Go Back To List </a>
+
+<form action="/Department/Create" method="POST" style="margin-top:30px;">
+    <div>
+        <label>Department Name:</label> <input type="text" name="DepartmentName" />
+    </div>
+    <div>
+        <label>Service:</label> <input type="text" name="Service" />
+    </div>
+    <div>
+        <label>Donor ID:</label> <input type="number" name="DonorID" />
+    </div>
+    <div>
+        <label>Doctor ID:</label> <input type="number" name="DoctorId" />
+    </div>
+
+    <div>
+        <input type="submit" value="Add Department" />
+
+    </div>
+</form>

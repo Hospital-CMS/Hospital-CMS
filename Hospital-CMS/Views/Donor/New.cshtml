@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Hospital_CMS.Models.DonorDto>
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<a class="navlink" style="border: 1px solid black; padding: 10px; color: green; " ; href="/Donor/List">Go Back To List </a>
+
+<form action="/Donor/Create" method="POST" style="margin-top:30px;">
+    <div>
+        <label>Donor First Name:</label> <input type="text" name="FirstName" />
+    </div>
+    <div>
+        <label>Donor Last Name:</label> <input type="text" name="LastName" />
+    </div>
+    <div>
+        <label>Contact:</label> <input type="number" name="Contact" />
+    </div>
+    <div>
+        <label>Address:</label> <input type="text" name="Address" />
+    </div>
+    <div>
+        <label>Value:</label> <input type="number" name="Value" />
+    </div>
+
+    <div>
+        <input type="submit" value="Add Donor" />
+
+    </div>
+</form>
