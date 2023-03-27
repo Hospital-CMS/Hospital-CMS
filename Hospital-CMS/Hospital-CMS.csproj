@@ -214,6 +214,10 @@
     <Compile Include="Migrations\202303231611219_patient-room.Designer.cs">
       <DependentUpon>202303231611219_patient-room.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303252327495_doctors update.cs" />
+    <Compile Include="Migrations\202303252327495_doctors update.Designer.cs">
+      <DependentUpon>202303252327495_doctors update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -318,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303231611219_patient-room.resx">
       <DependentUpon>202303231611219_patient-room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303252327495_doctors update.resx">
+      <DependentUpon>202303252327495_doctors update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

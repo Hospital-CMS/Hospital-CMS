@@ -18,9 +18,9 @@ namespace Hospital_CMS.Models
 
         public string Gender { get; set; }
 
-        public int LicenceNo { get; set; }
+        public Int64 LicenceNo { get; set; }
 
-        public int ContactNo { get; set; }
+        public Int64 ContactNo { get; set; }
 
         [ForeignKey("Specilization")]
         public int SpecilizationId { get; set; }
@@ -39,9 +39,9 @@ namespace Hospital_CMS.Models
 
         public string Gender { get; set; }
 
-        public int LicenceNo { get; set; }
+        public Int64 LicenceNo { get; set; }
 
-        public int ContactNo { get; set; }
+        public Int64 ContactNo { get; set; }
 
         public int SpecilizationId { get; set; }
 

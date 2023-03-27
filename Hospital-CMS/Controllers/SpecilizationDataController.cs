@@ -17,7 +17,7 @@ namespace Hospital_CMS.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/SpecilizationData/ListSpecilization
-        //comments
+        
         [HttpGet]
         public IEnumerable<SpecilizationDto> ListSpecilization()
         {
