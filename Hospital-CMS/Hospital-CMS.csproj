@@ -182,6 +182,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppointmentDataController.cs" />
+    <Compile Include="Controllers\DischargeDataController.cs" />
     <Compile Include="Controllers\DoctorDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -219,9 +221,31 @@
     <Compile Include="Migrations\202303281446190_department-donor.designer.cs">
       <DependentUpon>202303281446190_department-donor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303281800249_appointment.cs" />
+    <Compile Include="Migrations\202303281800249_appointment.designer.cs">
+      <DependentUpon>202303281800249_appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303281803118_discharge.cs" />
+    <Compile Include="Migrations\202303281803118_discharge.designer.cs">
+      <DependentUpon>202303281803118_discharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303281805393_discharge1.cs" />
+    <Compile Include="Migrations\202303281805393_discharge1.designer.cs">
+      <DependentUpon>202303281805393_discharge1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303281808297_appointment1.cs" />
+    <Compile Include="Migrations\202303281808297_appointment1.designer.cs">
+      <DependentUpon>202303281808297_appointment1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303281809261_appointment2.cs" />
+    <Compile Include="Migrations\202303281809261_appointment2.designer.cs">
+      <DependentUpon>202303281809261_appointment2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Discharge.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -328,6 +352,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303281446190_department-donor.resx">
       <DependentUpon>202303281446190_department-donor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303281800249_appointment.resx">
+      <DependentUpon>202303281800249_appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303281803118_discharge.resx">
+      <DependentUpon>202303281803118_discharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303281805393_discharge1.resx">
+      <DependentUpon>202303281805393_discharge1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303281808297_appointment1.resx">
+      <DependentUpon>202303281808297_appointment1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303281809261_appointment2.resx">
+      <DependentUpon>202303281809261_appointment2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

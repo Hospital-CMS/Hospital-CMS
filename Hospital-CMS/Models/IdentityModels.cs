@@ -40,6 +40,15 @@ namespace Hospital_CMS.Models
         //add Room entity to our system
         public DbSet<Room> Rooms { get; set; }
 
+
+        //add Appointment entity to our system
+        public DbSet<Appointment> Appointments { get; set; }
+
+        //add Discharge entity to our system
+        public DbSet<Discharge> Discharges { get; set; }
+
+
+
         public DbSet<Department> Departments { get; set; }
 
         public DbSet<Donor> Donors { get; set; }
