@@ -1,0 +1,23 @@
+﻿@model Hospital_CMS.Models.DoctorDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="/Doctor/List">Go Back</a>
+
+<div class="active" style="float:right; font-size:30px;">
+    <a class="update" href="/Doctor/Edit/@Model.DoctorId"> Update</a>
+
+    <a class="delete" href="/Doctor/DeleteConfirm/@Model.DoctorId"> Delete</a>
+</div>
+
+<h1> Show Doctor</h1>
+
+
+<h2>Doctor Name: @Model.DoctorFirstname @Model.DoctorLastname</h2>
+<div>Gender: @Model.Gender</div>
+<div>Licence No: @Model.LicenceNo</div>
+<div>Contact No: @Model.ContactNo</div>
+<div>Specilization: @Model.SpecilizationId. @Model.SpecilizationName </div>
+

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Hospital_CMS.Models.SpecilizationDto>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<a href="/Specilization/New">New Specilization</a>
+<h2>List</h2>
+
+@foreach (var specilization in Model)
+            {
+<h2><a href="/Specilization/Details/@specilization.SpecilizationId"> @specilization.SpecilizationId. @specilization.SpecilizationName</a></h2>
+                
+            }

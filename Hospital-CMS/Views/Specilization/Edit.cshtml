@@ -1,0 +1,26 @@
+﻿@model Hospital_CMS.Models.SpecilizationDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h1><a href="/Specilization/List">Go Back</a></h1>
+<h2>Edit Specilization</h2>
+
+<div style="font-size:30px; float:right;">
+    <a class="cancel" href="/Specilization/List">Cancel</a>
+</div>
+
+<form action="/Specilization/Update/@Model.SpecilizationId" method="POST">
+    <div>
+        <label> Specilization ID:</label>
+    <input type="number" name="SpecilizationId" value="@Model.SpecilizationId" />
+   </div>
+    <div>
+        <label>Specilization:</label> <input type="text" name="SpecilizationName" value="@Model.SpecilizationName" />
+    </div>
+
+    <div>
+        <input type="submit" value="Edit Specilization" />
+    </div>
+</form>

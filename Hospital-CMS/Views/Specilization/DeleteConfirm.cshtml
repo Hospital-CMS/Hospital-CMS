@@ -1,0 +1,21 @@
+﻿@model Hospital_CMS.Models.SpecilizationDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Delete Specilization</h2>
+
+<div>
+    <a class="cancel" href="/Specilization/List">Cancel</a>
+
+    <a href="/Specilization/DeleteConfirm/@Model.SpecilizationId"> </a>
+</div>
+
+<h3> Are You sure want to delete country?</h3>
+
+<h2> @Model.SpecilizationName</h2>
+
+<form action="/Specilization/Delete/@Model.SpecilizationId" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

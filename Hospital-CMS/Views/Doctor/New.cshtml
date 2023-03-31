@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Hospital_CMS.Models.SpecilizationDto>
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Doctor</h2>
+
+<form action="/Doctor/Create" method="POST">
+    <div>
+        <label>FirstName: </label> <input type="text" name="DoctorFirstname" />
+        <label>LastName: </label> <input type="text" name="DoctorLastname" />
+    </div>
+    <div>
+        <label>Gender:</label>
+        <input type="radio" name="Gender" value="Male"> Male
+        <input type="radio" name="Gender" value="Female"> Female
+    </div>
+    <div>
+        <label>Licence No: </label> <input type="text" name="LicenceNo" />
+    </div>
+    <div>
+        <label>Contact No: </label> <input name="ContactNo" />
+    </div>
+    <div>
+        <label>Specilization: </label>
+        <select name="SpecilizationId">
+
+            @foreach (var Specilization in Model)
+            {
+            <option value="@Specilization.SpecilizationId">@Specilization.SpecilizationName</option>
+                
+            }
+
+        </select>
+        <!--<input type="number" name="SpecilizationId" />-->
+       
+    </div>
+    <div>
+        <input type="submit" value="Add Doctor" />
+    </div>
+
+</form>

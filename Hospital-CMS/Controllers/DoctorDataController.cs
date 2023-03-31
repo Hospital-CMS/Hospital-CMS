@@ -19,6 +19,7 @@ namespace Hospital_CMS.Controllers
         // GET: api/DoctorData/ListDoctors
         //curl https://localhost:44370/api/DoctorData/ListDoctors
         [HttpGet]
+        [ResponseType(typeof(DoctorDto))]
         public IEnumerable<DoctorDto> ListDoctors()
         {
            List<Doctor> Doctors =db.Doctors.ToList();
@@ -31,12 +32,48 @@ namespace Hospital_CMS.Controllers
                 Gender =a.Gender,
                 LicenceNo =a.LicenceNo,
                 ContactNo =a.ContactNo,
-                SpecilizationId= a.SpecilizationId
+                SpecilizationId= a.Specilization.SpecilizationId,
+                SpecilizationName =a.Specilization.SpecilizationName
+                
+            }));
+
+            return DoctorDtos;
+        }
+
+
+
+        /// <summary>
+        /// Gather all information about doctor related to particular specilization id
+        /// </summary>
+        /// <param name="id"> Specilization Id</param>
+        /// <returns></returns>
+
+        // GET: api/DoctorData/ListDoctorsForSpecilization/2
+        //curl https://localhost:44370/api/DoctorData/ListDoctors
+        [HttpGet]
+        [ResponseType(typeof(DoctorDto))]
+        public IEnumerable<DoctorDto> ListDoctorsForSpecilization(int id)
+        {
+            List<Doctor> Doctors = db.Doctors.Where(a=>a.SpecilizationId==id).ToList();
+            List<DoctorDto> DoctorDtos = new List<DoctorDto>();
+
+            Doctors.ForEach(a => DoctorDtos.Add(new DoctorDto()
+            {
+                DoctorId = a.DoctorId,
+                DoctorFirstname = a.DoctorFirstname,
+                DoctorLastname = a.DoctorLastname,
+                Gender = a.Gender,
+                LicenceNo = a.LicenceNo,
+                ContactNo = a.ContactNo,
+                SpecilizationId = a.Specilization.SpecilizationId,
+                SpecilizationName = a.Specilization.SpecilizationName
 
             }));
 
             return DoctorDtos;
         }
+
+
 
         // GET: api/DoctorData/FindDoctor/5
         // curl "https://localhost:44370/api/DoctorData/FindDoctor/1"
@@ -44,13 +81,25 @@ namespace Hospital_CMS.Controllers
         [HttpGet]
         public IHttpActionResult FindDoctor(int id)
         {
-            Doctor doctor = db.Doctors.Find(id);
-            if (doctor == null)
+            Doctor Doctor = db.Doctors.Find(id);
+            DoctorDto DoctorDto = new DoctorDto()
+            {
+                DoctorId = Doctor.DoctorId,
+                DoctorFirstname= Doctor.DoctorFirstname,
+                DoctorLastname =Doctor.DoctorLastname,
+                Gender = Doctor.Gender,
+                LicenceNo =Doctor.LicenceNo,
+                ContactNo =Doctor.ContactNo,
+                SpecilizationId = Doctor.Specilization.SpecilizationId,
+                SpecilizationName= Doctor.Specilization.SpecilizationName
+
+            };
+            if (Doctor == null)
             {
                 return NotFound();
             }
 
-            return Ok(doctor);
+            return Ok(DoctorDto);
         }
 
         // POST: api/DoctorData/UpdateDoctor/5

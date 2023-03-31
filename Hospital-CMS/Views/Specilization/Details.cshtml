@@ -1,0 +1,24 @@
+﻿@model Hospital_CMS.Models.ViewModels.DetailsSpecilization
+
+@{
+    ViewBag.Title = "Details";
+}
+<a href="/Specilization/List">Go Back</a>
+<div class="active" style="float:right; font-size:30px;">
+    <a class="update" href="/Specilization/Edit/@Model.SelectedSpecilization.SpecilizationId"> Update</a>
+
+    <a class="delete" href="/Specilization/DeleteConfirm/@Model.SelectedSpecilization.SpecilizationId"> Delete</a>
+</div>
+
+<h1> Show Specilization</h1>
+
+<h2>@Model.SelectedSpecilization.SpecilizationId @Model.SelectedSpecilization.SpecilizationName</h2>
+
+<div>
+    <h4>Doctor Related to this Specilization</h4>
+   
+    @foreach(var doctor in Model.RelatedDoctors)
+            {
+               <h2> <a href="/Doctor/Details/@doctor.DoctorId">@doctor.DoctorFirstname</a></h2>
+            }
+</div>

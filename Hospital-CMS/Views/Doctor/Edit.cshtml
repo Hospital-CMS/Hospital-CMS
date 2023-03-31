@@ -1,0 +1,50 @@
+﻿@model Hospital_CMS.Models.ViewModels.UpdateDoctor
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div><a href="/Doctor/List">Go Back</a></div>
+
+<h2>Edit Doctor</h2>
+
+<div style="font-size:30px; float:right;">
+    <a class="cancel" href="/Doctor/List">Cancel</a>
+</div>
+
+
+<form action="/Doctor/Update/@Model.SelectedDoctor.DoctorId" method="POST">
+
+    <input name="DoctorId" value="@Model.SelectedDoctor.DoctorId" hidden/>
+    <div>
+        <label>FirstName: </label> <input type="text" name="DoctorFirstname" value="@Model.SelectedDoctor.DoctorFirstname" />
+        <label>LastName: </label> <input type="text" name="DoctorLastname" value="@Model.SelectedDoctor.DoctorLastname" />
+    </div>
+    <div>
+        <label>Gender:</label>
+        <input type="radio" name="Gender" value="Male" checked="@(Model.SelectedDoctor.Gender == "Male")"> Male
+        <input type="radio" name="Gender" value="Female" checked="@(Model.SelectedDoctor.Gender == "Female")"> Female
+    </div>
+    <div>
+        <label>Licence No: </label> <input type="text" name="LicenceNo" value="@Model.SelectedDoctor.LicenceNo" />
+    </div>
+    <div>
+        <label>Contact No: </label> <input name="ContactNo" value="@Model.SelectedDoctor.ContactNo" />
+    </div>
+    <div>
+        <label>Specilization: </label>
+        <select name="SpecilizationId">
+
+            @foreach (var Specilization in Model.SpecilizationOption)
+            {
+                <option value="@Specilization.SpecilizationId">@Specilization.SpecilizationName</option>
+
+            }
+
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Edit Doctor" />
+    </div>
+
+</form>

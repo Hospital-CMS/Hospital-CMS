@@ -346,7 +346,6 @@ C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\bin\Mi
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.AssemblyReference.cache
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.doctors.resources
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.specilization.resources
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital_CMS.Migrations.doctorspecilization.resources
@@ -359,3 +358,4 @@ C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\De
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.CopyComplete
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.dll
 C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.pdb
+C:\Users\kruna\source\repos\Hospital-CMS-Copy-3\Hospital-CMS\Hospital-CMS\obj\Debug\Hospital-CMS.csproj.AssemblyReference.cache

@@ -33,6 +33,7 @@ namespace Hospital_CMS.Controllers
             return SpecilizationDtos;
         }
 
+
         // GET: api/SpecilizationData/FindSpecilization/5
         //curl "https://localhost:44370/api/SpecilizationData/FindSpecilization/1"
         [ResponseType(typeof(Specilization))]
@@ -40,13 +41,18 @@ namespace Hospital_CMS.Controllers
 
         public IHttpActionResult FindSpecilization(int id)
         {
-            Specilization specilization = db.Specilization.Find(id);
-            if (specilization == null)
+            Specilization Specilization = db.Specilization.Find(id);
+            SpecilizationDto SpecilizationDto = new SpecilizationDto()
+            {
+                SpecilizationId= Specilization.SpecilizationId,
+                SpecilizationName =Specilization.SpecilizationName
+            };
+            if (Specilization == null)
             {
                 return NotFound();
             }
 
-            return Ok(specilization);
+            return Ok(SpecilizationDto);
         }
 
         // POST: api/SpecilizationData/UpdateSpecilization/5
