@@ -1,6 +1,6 @@
 # Hospital-CMS
-
-<h2> Disa: Doctor, Specilization </h2>
-<h2> Rachna: Patient, Room </h2>
-<h2> Nikhil: Department, Donor <h2>
-<h2> Gajendra: Appointment, Discharge </h2>
+<p>In the Hospital Management System Assignment, there are total 8 entities. Each of us working on 2 entities.</p>
+<h3> Disa: Doctor, Specilization </h3>
+<h3> Rachana: Patient, Room </h3>
+<h3> Nikhil: Department, Donor <h3>
+<h3> Gajendra: Appointment, Discharge </h3>
