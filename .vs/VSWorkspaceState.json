@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Hospital-CMS",
+    "\\Hospital-CMS\\Controllers",
+    "\\Hospital-CMS\\Models"
   ],
   "SelectedNode": "\\Hospital-CMS.sln",
   "PreviewInSolutionExplorer": false
