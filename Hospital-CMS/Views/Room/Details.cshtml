@@ -1,0 +1,15 @@
+﻿@model Hospital_CMS.Models.RoomDto
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="/Room/List">Go back to list</a>
+<br />
+<a href="/Room/Edit/@Model.RoomId">Update</a>
+<h2>@Model.RoomNo</h2>
+<div>Room Type: @Model.RoomType</div>
+
+<br />
+<a href="/Room/DeleteConfirm/@Model.RoomId">Delete</a>
