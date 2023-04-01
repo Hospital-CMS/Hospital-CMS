@@ -1,0 +1,37 @@
+﻿@model Hospital_CMS.Models.PatientDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Patient</h2>
+
+<form action="/Patient/Update/@Model.PatientId" method="POST">
+    <div>
+        <input type="hidden" name="PatientId" value="@Model.PatientId" />
+    </div>
+    <div>
+        <label>Patient Firstname:</label> <input type="text" name="PFName" value="@Model.PFName" />
+    </div>
+    <div>
+        <label>Patient Lastname:</label> <input type="text" name="PLName" value="@Model.PLName" />
+    </div>
+    <div>
+        <label>Gender:</label> <input type="text" name="Gender" value="@Model.Gender" />
+    </div>
+    <div>
+        <label>Birth Date:</label> <input type="datetime" name="BirthDate" value="@Model.BirthDate" />
+    </div>
+    <div>
+        <label>Healthcard Number:</label> <input type="text" name="HealthcardNo" value="@Model.HealthcardNo" />
+    </div>
+    <div>
+        <label>Contact Number:</label> <input type="text" name="ContactNo" value="@Model.ContactNo" />
+    </div>
+    <div>
+        <label>Room ID:</label> <input type="text" name="RoomId" value="@Model.RoomId" />
+    </div>
+    <div>
+        <input type="submit" value="Update Patient" />
+    </div>
+</form>
+

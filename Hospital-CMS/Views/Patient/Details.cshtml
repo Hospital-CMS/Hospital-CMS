@@ -1,0 +1,21 @@
+﻿@model Hospital_CMS.Models.PatientDto
+
+
+@{
+    ViewBag.Title = "View";
+}
+
+<a href="/Patient/List">Go back to list</a>
+<br/>
+<a href="/Patient/Edit/@Model.PatientId">Update</a>
+
+<br/>
+<h2>@Model.PFName @Model.PLName</h2>
+<div>Gender: @Model.Gender</div>
+<div>Birth Date: @Model.BirthDate</div>
+<div>HealthCard Number: @Model.HealthcardNo</div>
+<div>Contact Number: @Model.ContactNo</div>
+<div>Room Number: @Model.RoomNo</div>
+<div>Room Type: @Model.RoomType</div>
+<br/>
+<a href="/Patient/DeleteConfirm/@Model.PatientId">Delete</a>

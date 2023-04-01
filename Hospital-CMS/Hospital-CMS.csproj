@@ -187,7 +187,9 @@
     <Compile Include="Controllers\DoctorDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\PatientDataController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\RoomDataController.cs" />
     <Compile Include="Controllers\SpecilizationDataController.cs" />
     <Compile Include="Global.asax.cs">
@@ -314,6 +316,18 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Patient\List.cshtml" />
+    <Content Include="Views\Patient\Details.cshtml" />
+    <Content Include="Views\Room\List.cshtml" />
+    <Content Include="Views\Room\Details.cshtml" />
+    <Content Include="Views\Patient\New.cshtml" />
+    <Content Include="Views\Room\New.cshtml" />
+    <Content Include="Views\Patient\Error.cshtml" />
+    <Content Include="Views\Room\Error.cshtml" />
+    <Content Include="Views\Patient\Edit.cshtml" />
+    <Content Include="Views\Patient\DeleteConfirm.cshtml" />
+    <Content Include="Views\Room\DeleteConfirm.cshtml" />
+    <Content Include="Views\Room\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

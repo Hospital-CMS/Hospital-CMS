@@ -36,6 +36,7 @@ namespace Hospital_CMS.Models
         public DateTime BirthDate { get; set; }
         public string HealthcardNo { get; set; }
         public string ContactNo { get; set; }
+        public int RoomId { get; set; }
         public string RoomNo { get; set; }
         public string RoomType { get; set; }
     }
