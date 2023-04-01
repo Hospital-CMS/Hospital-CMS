@@ -34,6 +34,7 @@ namespace Hospital_CMS.Controllers
                 BirthDate = p.BirthDate,
                 HealthcardNo = p.HealthcardNo,
                 ContactNo = p.ContactNo,
+                RoomId = p.RoomId,
                 RoomNo = p.Room.RoomNo,
                 RoomType = p.Room.RoomType
             }));
@@ -57,6 +58,7 @@ namespace Hospital_CMS.Controllers
                 BirthDate = Patient.BirthDate,
                 HealthcardNo = Patient.HealthcardNo,
                 ContactNo = Patient.ContactNo,
+                RoomId = Patient.RoomId,
                 RoomNo = Patient.Room.RoomNo,
                 RoomType = Patient.Room.RoomType
             };
