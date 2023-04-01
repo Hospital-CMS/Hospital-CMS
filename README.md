@@ -7,7 +7,9 @@
   
 <p>In the Hospital Management System Assignment, there are total 8 entities. Each of us working on 2 entities.</p>
 
-<h4> Disa: Doctor, Specilization </h4>
-<h4> Rachana: Patient, Room </h4>
-<h4> Nikhil: Department, Donor <h4>
-<h4> Gajendra: Appointment, Discharge </h4>
+<ul>
+  <li><strong>Disa:</strong> Doctor, Specilization</li>
+  <li><strong>Rachana:</strong> Patient, Room</li>
+  <li><strong>Nikhil:</strong> Department, Donor</li>
+  <li><strong>Gajendra:</strong> Appointment, Discharge</li>
+</ul>
