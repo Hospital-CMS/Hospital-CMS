@@ -3,7 +3,9 @@
     "",
     "\\Hospital-CMS",
     "\\Hospital-CMS\\Controllers",
-    "\\Hospital-CMS\\Models"
+    "\\Hospital-CMS\\Models",
+    "\\Hospital-CMS\\Views",
+    "\\Hospital-CMS\\Views\\Patient"
   ],
   "SelectedNode": "\\Hospital-CMS.sln",
   "PreviewInSolutionExplorer": false
