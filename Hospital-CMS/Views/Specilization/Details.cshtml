@@ -17,7 +17,7 @@
 <div>
     <h4>Doctor Related to this Specilization</h4>
    
-    @foreach(var doctor in Model.RelatedDoctors)
+    @foreach(var doctor in Model.RelatedDoctor)
             {
                <h2> <a href="/Doctor/Details/@doctor.DoctorId">@doctor.DoctorFirstname</a></h2>
             }

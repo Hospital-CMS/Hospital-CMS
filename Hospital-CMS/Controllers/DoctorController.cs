@@ -46,19 +46,21 @@ namespace Hospital_CMS.Controllers
             //Objective: communicate with our Doctor data api to retrive one Doctor
             //curl  https://localhost:44370/api/DoctorData/FindDoctor/{id}
 
-            
+        
+
+            //old
             string url = "DoctorData/FindDoctor/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             Debug.WriteLine("The Response code is ");
             Debug.WriteLine(response.StatusCode);
 
-            DoctorDto selecteddoctor = response.Content.ReadAsAsync<DoctorDto>().Result;
+            DoctorDto SelectedDoctor = response.Content.ReadAsAsync<DoctorDto>().Result;
             Debug.WriteLine("doctor recieved");
-            Debug.WriteLine(selecteddoctor.DoctorFirstname);
+            Debug.WriteLine(SelectedDoctor.DoctorFirstname);
 
-
-            return View(selecteddoctor);
+            //old
+            return View(SelectedDoctor);
         }
 
         public ActionResult Error()

@@ -66,7 +66,7 @@ namespace Hospital_CMS.Controllers
             //showcase information about doctor related to this specilization
             //send a request to gather information about doctors 
 
-            url = "DoctorData/ListDoctorsForSpecilization" + id;
+            url = "DoctorData/ListDoctorsForSpecilization/" + id;
             response = client.GetAsync(url).Result;
             IEnumerable<DoctorDto> RelatedDoctors = response.Content.ReadAsAsync<IEnumerable<DoctorDto>>().Result;
             

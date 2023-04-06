@@ -33,6 +33,29 @@ namespace Hospital_CMS.Controllers
             return SpecilizationDtos;
         }
 
+        /// <summary>
+        /// Gather information about all doctor realated to particular specilizatin id
+        /// </summary>
+        /// <returns></returns>
+
+
+        // GET: api/SpecilizationData/ListSpecilization
+        //curl https://localhost:44370/api/SpecilizationData/ListSpecilization
+        [HttpGet]
+        [ResponseType(typeof(SpecilizationDto))]
+        public IEnumerable<SpecilizationDto> ListSpecilizationForDoctor()
+        {
+            List<Specilization> Specilizations = db.Specilization.ToList();
+            List<SpecilizationDto> SpecilizationDtos = new List<SpecilizationDto>();
+
+            Specilizations.ForEach(a => SpecilizationDtos.Add(new SpecilizationDto()
+            {
+                SpecilizationId = a.SpecilizationId,
+                SpecilizationName = a.SpecilizationName
+            }));
+
+            return SpecilizationDtos;
+        }
 
         // GET: api/SpecilizationData/FindSpecilization/5
         //curl "https://localhost:44370/api/SpecilizationData/FindSpecilization/1"
