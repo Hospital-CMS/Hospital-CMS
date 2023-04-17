@@ -3,48 +3,85 @@
 @{
     ViewBag.Title = "Edit";
 }
-
-<div><a href="/Doctor/List">Go Back</a></div>
-
-<h2>Edit Doctor</h2>
+<div style="font-size:30px; float:left;">
+    <a class="plus" href="/Doctor/List">Go Back</a>
+</div>
 
 <div style="font-size:30px; float:right;">
     <a class="cancel" href="/Doctor/List">Cancel</a>
 </div>
 
+<div class="center">
+    <h2>Edit Doctor</h2>
 
-<form action="/Doctor/Update/@Model.SelectedDoctor.DoctorId" method="POST">
+    <form action="/Doctor/Update/@Model.SelectedDoctor.DoctorId" method="POST">
 
-    <input name="DoctorId" value="@Model.SelectedDoctor.DoctorId" hidden/>
-    <div>
-        <label>FirstName: </label> <input type="text" name="DoctorFirstname" value="@Model.SelectedDoctor.DoctorFirstname" />
-        <label>LastName: </label> <input type="text" name="DoctorLastname" value="@Model.SelectedDoctor.DoctorLastname" />
-    </div>
-    <div>
-        <label>Gender:</label>
-        <input type="radio" name="Gender" value="Male" checked="@(Model.SelectedDoctor.Gender == "Male")"> Male
-        <input type="radio" name="Gender" value="Female" checked="@(Model.SelectedDoctor.Gender == "Female")"> Female
-    </div>
-    <div>
-        <label>Licence No: </label> <input type="text" name="LicenceNo" value="@Model.SelectedDoctor.LicenceNo" />
-    </div>
-    <div>
-        <label>Contact No: </label> <input name="ContactNo" value="@Model.SelectedDoctor.ContactNo" />
-    </div>
-    <div>
-        <label>Specilization: </label>
-        <select name="SpecilizationId">
+        <input name="DoctorId" value="@Model.SelectedDoctor.DoctorId" hidden />
+        <div>
+            <label>FirstName: </label> <input type="text" name="DoctorFirstname" value="@Model.SelectedDoctor.DoctorFirstname"  style="color:black"/>
+            <label>LastName: </label> <input type="text" name="DoctorLastname" value="@Model.SelectedDoctor.DoctorLastname" style="color:black"/>
+        </div>
+        <div>
+            <label>Gender:</label>
+            <input type="radio" name="Gender" value="Male" checked="@(Model.SelectedDoctor.Gender == "Male")"> Male
+            <input type="radio" name="Gender" value="Female" checked="@(Model.SelectedDoctor.Gender == "Female")"> Female
+        </div>
+        <div>
+            <label>Licence No: </label> <input type="text" name="LicenceNo" value="@Model.SelectedDoctor.LicenceNo" style="color:black" />
+        </div>
+        <div>
+            <label>Contact No: </label> <input name="ContactNo" value="@Model.SelectedDoctor.ContactNo" style="color:black" />
+        </div>
+        <div>
+            <label>Specilization: </label>
+            <select name="SpecilizationId" style="color:black">
 
-            @foreach (var Specilization in Model.SpecilizationOption)
-            {
-                <option value="@Specilization.SpecilizationId">@Specilization.SpecilizationName</option>
+                @foreach (var Specilization in Model.SpecilizationOption)
+                {
+                    <option value="@Specilization.SpecilizationId">@Specilization.SpecilizationName</option>
 
-            }
+                }
 
-        </select>
-    </div>
-    <div>
-        <input type="submit" value="Edit Doctor" />
-    </div>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Edit Doctor"  style="color:black"/>
+        </div>
 
-</form>
+    </form>
+</div>
+
+<style>
+    .link:hover {
+        text-shadow: #e943da 5px 5px 5px;
+        text-decoration: none;
+    }
+
+    .plus {
+        background-color: #0094ff;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+        .plus:hover {
+            text-decoration: none;
+        }
+
+    .center {
+        text-align: center;
+    }
+
+    .cancel {
+        background-color: #0094ff;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+        .cancel:hover {
+            text-decoration: none;
+        }
+</style>

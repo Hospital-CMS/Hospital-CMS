@@ -5,12 +5,15 @@
     ViewBag.Title = "Create";
 }
 
+   <div style="font-size:30px; float:right;">
+    <a class="plus" href="/Doctor/List">Go Back</a></div>
+
 <h2>Create Doctor</h2>
 
 <form action="/Doctor/Create" method="POST">
     <div>
-        <label>FirstName: </label> <input type="text" name="DoctorFirstname" />
-        <label>LastName: </label> <input type="text" name="DoctorLastname" />
+        <label>FirstName: </label> <input type="text" name="DoctorFirstname" style="color:black" />
+        <label>LastName: </label> <input type="text" name="DoctorLastname" style="color:black"/>
     </div>
     <div>
         <label>Gender:</label>
@@ -18,14 +21,14 @@
         <input type="radio" name="Gender" value="Female"> Female
     </div>
     <div>
-        <label>Licence No: </label> <input type="text" name="LicenceNo" />
+        <label>Licence No: </label> <input type="text" name="LicenceNo" style="color:black" />
     </div>
     <div>
-        <label>Contact No: </label> <input name="ContactNo" />
+        <label>Contact No: </label> <input name="ContactNo" style="color:black"/>
     </div>
     <div>
         <label>Specilization: </label>
-        <select name="SpecilizationId">
+        <select name="SpecilizationId" style="color:black">
 
             @foreach (var Specilization in Model)
             {
@@ -38,7 +41,26 @@
        
     </div>
     <div>
-        <input type="submit" value="Add Doctor" />
+        <input type="submit" value="Add Doctor" style="color:black" />
     </div>
 
 </form>
+
+<style>
+    .link:hover {
+        text-shadow: #e943da 5px 5px 5px;
+        text-decoration: none;
+    }
+
+    .plus {
+        background-color: #0094ff;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+        .plus:hover {
+            text-decoration: none;
+        }
+</style>

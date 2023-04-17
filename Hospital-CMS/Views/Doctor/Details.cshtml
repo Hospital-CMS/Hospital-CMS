@@ -4,20 +4,63 @@
     ViewBag.Title = "Details";
 }
 
-<a href="/Doctor/List">Go Back</a>
-
-<div class="active" style="float:right; font-size:30px;">
-    <a class="update" href="/Doctor/Edit/@Model.DoctorId"> Update</a>
-
-    <a class="delete" href="/Doctor/DeleteConfirm/@Model.DoctorId"> Delete</a>
+<div style="font-size:30px; float:left;">
+    <a class="plus" href="/Doctor/List">Go Back</a> 
 </div>
 
-<h1> Show Doctor</h1>
+    <div class="active" style="float:right; font-size:30px;">
+        <a class="update" href="/Doctor/Edit/@Model.DoctorId"> Update</a>
 
+        <a class="delete" href="/Doctor/DeleteConfirm/@Model.DoctorId"> Delete</a>
+    </div>
 
-<h2>Doctor Name: @Model.DoctorFirstname @Model.DoctorLastname</h2>
-<div>Gender: @Model.Gender</div>
-<div>Licence No: @Model.LicenceNo</div>
-<div>Contact No: @Model.ContactNo</div>
-<div>Specilization: @Model.SpecilizationId. @Model.SpecilizationName </div>
+    <div class="center" style="font-size:20px">
+        <h1> Show Doctor</h1>
+        <h2>Name: @Model.DoctorFirstname @Model.DoctorLastname</h2>
+        <div>Gender: @Model.Gender</div>
+        <div>Licence No: @Model.LicenceNo</div>
+        <div>Contact No: @Model.ContactNo</div>
+        <div>Specilization: @Model.SpecilizationId. @Model.SpecilizationName </div>
+    </div>
 
+    <style>
+        .link:hover {
+            text-shadow: #e943da 5px 5px 5px;
+            text-decoration: none;
+        }
+
+        .plus {
+            background-color: #0094ff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+            .plus:hover {
+                text-decoration: none;
+            }
+        .update {
+            background-color: #0094ff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .update {
+            text-decoration: none;
+        }
+        .delete {
+            background-color: #0094ff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .delete {
+            text-decoration: none;
+        }
+        .center{
+            text-align:center;
+        }
+    </style>

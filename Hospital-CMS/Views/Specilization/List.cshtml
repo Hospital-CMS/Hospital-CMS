@@ -4,11 +4,36 @@
     ViewBag.Title = "List";
 }
 
-<a href="/Specilization/New">New Specilization</a>
-<h2>List</h2>
+<div style="font-size:30px; float:right;">
+    <a class="plus" href="/Specilization/New">New Specilization</a></div>
 
-@foreach (var specilization in Model)
-            {
-<h2><a href="/Specilization/Details/@specilization.SpecilizationId"> @specilization.SpecilizationId. @specilization.SpecilizationName</a></h2>
-                
+    <div class="spes">
+        <h1>List</h1>
+
+        @foreach (var specilization in Model)
+        {
+            <h2><strong style="background-color:white"><a href="/Specilization/Details/@specilization.SpecilizationId"> @specilization.SpecilizationId. @specilization.SpecilizationName</a></strong></h2>
+
+        }
+    </div>
+
+    <style>
+        .link:hover {
+            text-shadow: #e943da 5px 5px 5px;
+            text-decoration: none;
+        }
+
+        .plus {
+            background-color: #0094ff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+            .plus:hover {
+                text-decoration: none;
             }
+
+       
+    </style>

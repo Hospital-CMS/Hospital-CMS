@@ -4,18 +4,32 @@
     ViewBag.Title = "DeleteConfirm";
 }
 
-<h2>Delete Specilization</h2>
 
-<div>
+<div style="font-size:30px; float:right;">
     <a class="cancel" href="/Specilization/List">Cancel</a>
 
     <a href="/Specilization/DeleteConfirm/@Model.SpecilizationId"> </a>
 </div>
 
+
+<h2>Delete Specilization</h2>
 <h3> Are You sure want to delete country?</h3>
 
 <h2> @Model.SpecilizationName</h2>
 
 <form action="/Specilization/Delete/@Model.SpecilizationId" method="POST">
-    <input type="submit" value="Confirm Delete" />
+    <input type="submit" value="Confirm Delete" style="color:black" />
 </form>
+<style>
+    .cancel {
+        background-color: #0094ff;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+        .cancel:hover {
+            text-decoration: none;
+        }
+</style>

@@ -3,15 +3,42 @@
     ViewBag.Title = "Create";
 }
 
+
+<div style="font-size:30px; float:right;">
+    <a class="plus" href="/Specilization/List">Go Back</a>
+</div>
+
+
+
 <h2>Create Specilization</h2>
 
 <form action="/Specilization/Create" method="POST">
 
     <div>
-        <label>Specilization:</label> <input type="text" name="SpecilizationName" />
+        <label>Specilization:</label> <input type="text" name="SpecilizationName" style="color:black" />
     </div>
 
     <div>
-        <input type="submit" value="Add Specilization" />
+        <input type="submit" value="Add Specilization" style="color:black" />
     </div>
 </form>
+
+
+<style>
+    .link:hover {
+        text-shadow: #e943da 5px 5px 5px;
+        text-decoration: none;
+    }
+
+    .plus {
+        background-color: #0094ff;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+        .plus:hover {
+            text-decoration: none;
+        }
+</style>

@@ -3,22 +3,73 @@
 @{
     ViewBag.Title = "Details";
 }
-<a href="/Specilization/List">Go Back</a>
-<div class="active" style="float:right; font-size:30px;">
-    <a class="update" href="/Specilization/Edit/@Model.SelectedSpecilization.SpecilizationId"> Update</a>
+<div style="font-size:30px; float:left;">
+    <a class="plus" href=" /Specilization/List">Go Back</a></div>
 
-    <a class="delete" href="/Specilization/DeleteConfirm/@Model.SelectedSpecilization.SpecilizationId"> Delete</a>
-</div>
 
-<h1> Show Specilization</h1>
+    <div class="active" style="float:right; font-size:30px;">
+        <a class="update" href="/Specilization/Edit/@Model.SelectedSpecilization.SpecilizationId"> Update</a>
 
-<h2>@Model.SelectedSpecilization.SpecilizationId @Model.SelectedSpecilization.SpecilizationName</h2>
+        <a class="delete" href="/Specilization/DeleteConfirm/@Model.SelectedSpecilization.SpecilizationId"> Delete</a>
+    </div>
 
-<div>
-    <h4>Doctor Related to this Specilization</h4>
-   
-    @foreach(var doctor in Model.RelatedDoctor)
-            {
-               <h2> <a href="/Doctor/Details/@doctor.DoctorId">@doctor.DoctorFirstname</a></h2>
+    <div class="center">
+        <h1> Show Specilization</h1>
+
+        <h2 >@Model.SelectedSpecilization.SpecilizationId @Model.SelectedSpecilization.SpecilizationName</h2>
+    </div>
+
+    <div>
+        <h4>Doctor Related to this Specilization</h4>
+
+        @foreach (var doctor in Model.RelatedDoctor)
+        {
+    <h2><strong style="background-color:white"><a href="/Doctor/Details/@doctor.DoctorId">@doctor.DoctorFirstname</a></strong> </h2>
+        }
+    </div>
+    <style>
+        .link:hover {
+            text-shadow: #e943da 5px 5px 5px;
+            text-decoration: none;
+        }
+
+        .plus {
+            background-color: #0094ff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+            .plus:hover {
+                text-decoration: none;
             }
-</div>
+
+        .update {
+            background-color: #0094ff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .update {
+            text-decoration: none;
+        }
+
+        .delete {
+            background-color: #0094ff;
+            border-radius: 5px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .delete {
+            text-decoration: none;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>

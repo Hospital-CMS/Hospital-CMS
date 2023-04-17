@@ -4,19 +4,33 @@
     ViewBag.Title = "DeleteConfirm";
 }
 
-<h2>Delete Doctor</h2>
 
-<div>
+
+<div style="font-size:30px; float:right;">
     <a class="cancel" href="/Doctor/List">Cancel</a>
 
     <a href="/Doctor/DeleteConfirm/@Model.DoctorId"> </a>
 </div>
 
+<h2>Delete Doctor</h2>
 <h3> Are You sure want to delete country?</h3>
 
 <h2> @Model.DoctorId. @Model.DoctorFirstname @Model.DoctorLastname</h2>
 
 <form action="/Doctor/Delete/@Model.DoctorId" method="POST">
-    <input type="submit" value="Confirm Delete" />
+    <input type="submit" value="Confirm Delete" style="color:black" />
 </form>
 
+<style>
+    .cancel {
+        background-color: #0094ff;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+        .cancel:hover {
+            text-decoration: none;
+        }
+</style>
