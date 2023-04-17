@@ -1,19 +1,26 @@
 ﻿
-@model Hospital_CMS.Models.DonorDto
+@model Hospital_CMS.Models.ViewModels.DetailsDonors
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 <nav>
-    <a class="navlink" style="border: 1px solid black; padding: 10px; color:green; margin:10px;" href="/Donor/Edit/@Model.DonorID">Update </a>
-    <a class="dellink" style="border: 1px solid black; padding: 10px; color: red; margin: 10px;" href="/Donor/DeleteConfirm/@Model.DonorID">Delete</a>
+    <a class="navlink" style="border: 1px solid black; padding: 10px; color:green; margin:10px;" href="/Donor/Edit/@Model.SelectedDonors.DonorID">Update </a>
+    <a class="dellink" style="border: 1px solid black; padding: 10px; color: red; margin: 10px;" href="/Donor/DeleteConfirm/@Model.SelectedDonors.DonorID">Delete</a>
 </nav>
 <nav style="margin-top:30px; margin-left:10px;">
     <a style=" border: 1px solid black; padding: 10px;" href="/Donor/List">Go back to list</a>
 </nav>
-<h2>@Model.FirstName @Model.LastName </h2>
-<div>Contact: @Model.Contact </div>
-<div>Address: @Model.Address</div>
-<div>Value: @Model.Value</div>
+<h2>@Model.SelectedDonors.FirstName @Model.SelectedDonors.LastName </h2>
+<div>Contact: @Model.SelectedDonors.Contact </div>
+<div>Address: @Model.SelectedDonors.Address</div>
+<div>Value: @Model.SelectedDonors.Value</div>
 
+<div>
+    <h3>Donor for:</h3>
+    @foreach (var department in Model.KeptDepartments)
+    {
+        <a href="/Department/Details/@department.DepartmentID">@department.DepartmentName</a> <br />
+    }
+</div>

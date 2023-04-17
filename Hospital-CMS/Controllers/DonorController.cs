@@ -1,5 +1,6 @@
 ﻿using Hospital_CMS.Migrations;
 using Hospital_CMS.Models;
+using Hospital_CMS.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -45,6 +46,9 @@ namespace Hospital_CMS.Controllers
         // GET: Donor/Details/5
         public ActionResult Details(int id)
         {
+
+            DetailsDonors ViewModel = new DetailsDonors();
+
             //Objective: Communicate with our tree data api to retrieve one department
             //Curl https://localhost:44370/api/departmentdata/finddepartment/{id}
 
@@ -54,11 +58,20 @@ namespace Hospital_CMS.Controllers
             //Debug.WriteLine("The respose code is ");
             //Debug.WriteLine(response.StatusCode);
 
-            DonorDto SelectedDonor = response.Content.ReadAsAsync<DonorDto>().Result;
+            DonorDto SelectedDonors = response.Content.ReadAsAsync<DonorDto>().Result;
+
+            ViewModel.SelectedDonors = SelectedDonors;
 
 
+           url = "departmentdata/ListDepartmentForDonor/" + id;
+            response = client.GetAsync(url).Result;
+           IEnumerable<DepartmentDto> KeptDepartments = response.Content.ReadAsAsync<IEnumerable<DepartmentDto>>().Result;
 
-            return View(SelectedDonor);
+
+            ViewModel.KeptDepartments = KeptDepartments;
+
+
+            return View(ViewModel);
         }
 
         public ActionResult Error()

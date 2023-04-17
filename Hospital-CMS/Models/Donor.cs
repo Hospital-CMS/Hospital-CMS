@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Antlr.Runtime.Tree;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Hospital_CMS.Models
         public int Contact { get; set; }
         public string Address { get; set; }
         public int Value { get; set; }
+       public ICollection<Department> Departments { get; set; }
     }
     public class DonorDto
     {

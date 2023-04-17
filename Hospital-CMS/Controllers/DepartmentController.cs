@@ -1,5 +1,6 @@
 ﻿using Antlr.Runtime.Tree;
 using Hospital_CMS.Models;
+using Hospital_CMS.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -47,6 +48,7 @@ namespace Hospital_CMS.Controllers
         // GET: Department/Details/5
         public ActionResult Details(int id)
         {
+            DetailsDepartments ViewModel = new DetailsDepartments();
             //Objective: Communicate with our tree data api to retrieve one department
             //Curl https://localhost:44370/api/departmentdata/finddepartment/{id}
 
@@ -57,10 +59,17 @@ namespace Hospital_CMS.Controllers
             //Debug.WriteLine(response.StatusCode);
 
             DepartmentDto SelectedDepartment = response.Content.ReadAsAsync<DepartmentDto>().Result;
-           
 
-           
-            return View(SelectedDepartment);
+            ViewModel.SelectedDepartment = SelectedDepartment;
+
+           url = "donordata/ListDonorsForDepartment/" + id;
+           response = client.GetAsync(url).Result;
+           IEnumerable<DonorDto> ResponsibleDonors = response.Content.ReadAsAsync<IEnumerable<DonorDto>>().Result;
+
+            ViewModel.ResponsibleDonors = ResponsibleDonors;
+
+
+            return View(ViewModel);
         }
 
 

@@ -31,10 +31,39 @@ namespace Hospital_CMS.Controllers
                 DepartmentID = d.DepartmentID,
                 DepartmentName = d.DepartmentName,
                 Service = d.Service,
-                FirstName = d.Donor.FirstName,
-                LastName = d.Donor.LastName,
-                DoctorFirstname = d.Doctor.DoctorFirstname,
-                DoctorLastname = d.Doctor.DoctorLastname
+                //FirstName = d.Donor.FirstName,
+                //LastName = d.Donor.LastName,
+                //DoctorFirstname = d.Doctor.DoctorFirstname,
+                //DoctorLastname = d.Doctor.DoctorLastname
+
+            }));
+
+
+            return DepartmentDtos;
+        }
+
+
+
+
+        // GET: api/DepartmentData/ListDepartmentForDonor/1
+        [HttpGet]
+        [ResponseType(typeof(DepartmentDto))]
+        public IEnumerable<DepartmentDto> ListDepartmentForDonor(int id)
+        {
+            List<Department> Departments = db.Departments.Where(
+                d => d.Donors.Any(
+                a => a.DonorID == id
+
+                )).ToList();
+            List<DepartmentDto> DepartmentDtos = new List<DepartmentDto>();
+
+            Departments.ForEach(d => DepartmentDtos.Add(new DepartmentDto()
+            {
+                DepartmentID = d.DepartmentID,
+                DepartmentName = d.DepartmentName
+
+                
+
 
             }));
 
@@ -53,10 +82,10 @@ namespace Hospital_CMS.Controllers
                 DepartmentID = Department.DepartmentID,
                 DepartmentName = Department.DepartmentName,
                 Service = Department.Service,
-                FirstName = Department.Donor.FirstName,
-                LastName = Department.Donor.LastName,
-                DoctorFirstname = Department.Doctor.DoctorFirstname,
-                DoctorLastname = Department.Doctor.DoctorLastname
+                //FirstName = Department.Donor.FirstName,
+                //LastName = Department.Donor.LastName,
+                //DoctorFirstname = Department.Doctor.DoctorFirstname,
+                //DoctorLastname = Department.Doctor.DoctorLastname
             };
 
 

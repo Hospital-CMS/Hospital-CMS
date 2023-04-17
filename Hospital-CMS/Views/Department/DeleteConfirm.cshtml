@@ -10,8 +10,8 @@
 <a href="/Department/List">Cancel</a>
 <h2>@Model.DepartmentName</h2>
 <div>Service: @Model.Service</div>
-<div>Donor Name: @Model.FirstName @Model.LastName</div>
-<div>Doctor Name: @Model.DoctorFirstname @Model.DoctorLastname</div>
+@*<div>Donor Name: @Model.FirstName @Model.LastName</div>
+    <div>Doctor Name: @Model.DoctorFirstname @Model.DoctorLastname</div>*@
 <form action="/Department/Delete/@Model.DepartmentID" method="POST">
     <input type="submit" value="Confirm Delete" />
 
