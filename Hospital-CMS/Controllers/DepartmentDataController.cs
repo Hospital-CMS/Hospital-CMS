@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Web.Http;
 using System.Web.Http.Description;
-using Antlr.Runtime.Tree;
-using Hospital_CMS.Migrations;
+using System.Web.Mvc;
+using System.Web.Http;
 using Hospital_CMS.Models;
+using Antlr.Runtime.Tree;
+
 
 namespace Hospital_CMS.Controllers
 {
@@ -19,7 +18,8 @@ namespace Hospital_CMS.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/DepartmentData/ListDepartments
-        [HttpGet]
+       
+        [System.Web.Http.HttpGet]
         public IEnumerable<DepartmentDto> ListDepartments()
         {
             List<Department> departments = db.Departments.ToList();
@@ -46,7 +46,7 @@ namespace Hospital_CMS.Controllers
 
 
         // GET: api/DepartmentData/ListDepartmentForDonor/1
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         [ResponseType(typeof(DepartmentDto))]
         public IEnumerable<DepartmentDto> ListDepartmentForDonor(int id)
         {
@@ -71,9 +71,54 @@ namespace Hospital_CMS.Controllers
             return DepartmentDtos;
         }
 
+
+        //POST: api/DepartmentData/AssociateDepartmentWithDonor/1/1
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/DepartmentData/AssociateDepartmentWithDonor/{departmentid}/{donorid}")]
+        public IHttpActionResult AssociateDepartmentWithDonor(int departmentid, int donorid)
+        {
+            Department SelectedDepartment = db.Departments.Include(d => d.Donors).Where(d => d.DepartmentID == departmentid).FirstOrDefault();
+            Donor SelectedDonor = db.Donors.Find(donorid);
+
+            if (SelectedDepartment == null || SelectedDonor == null)
+            {
+                return NotFound();
+            }
+            SelectedDepartment.Donors.Add(SelectedDonor);
+            db.SaveChanges();
+
+
+            return Ok();
+        }
+
+
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/DepartmentData/UnAssociateDepartmentWithDonor/{departmentid}/{donorid}")]
+        public IHttpActionResult UnAssociateDepartmentWithDonor(int departmentid, int donorid)
+        {
+            Department SelectedDepartment = db.Departments.Include(t => t.Donors).Where(t => t.DepartmentID == departmentid).FirstOrDefault();
+            Donor SelectedDonor = db.Donors.Find(donorid);
+
+            if (SelectedDepartment == null || SelectedDonor == null)
+            {
+                return NotFound();
+            }
+            SelectedDepartment.Donors.Remove(SelectedDonor);
+            db.SaveChanges();
+
+
+            return Ok();
+        }
+
+
+
+
+
+
+
         // GET: api/DepartmentData/FindDepartment/5
         [ResponseType(typeof(Department))]
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         public IHttpActionResult FindDepartment(int id)
         {
             Department Department = db.Departments.Find(id);
@@ -94,7 +139,7 @@ namespace Hospital_CMS.Controllers
 
         // POST: api/DepartmentData/UpdateDepartment/5
         [ResponseType(typeof(void))]
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         public IHttpActionResult UpdateDepartment(int id, Department department)
         {
             if (!ModelState.IsValid)
@@ -130,7 +175,7 @@ namespace Hospital_CMS.Controllers
 
         // POST: api/DepartmentData/AddDepartment
         [ResponseType(typeof(Department))]
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         public IHttpActionResult AddDepartment(Department department)
         {
             if (!ModelState.IsValid)
@@ -146,7 +191,7 @@ namespace Hospital_CMS.Controllers
 
         // POST: api/DepartmentData/DeleteDepartment/5
         [ResponseType(typeof(Department))]
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         public IHttpActionResult DeleteDepartment(int id)
         {
             Department department = db.Departments.Find(id);

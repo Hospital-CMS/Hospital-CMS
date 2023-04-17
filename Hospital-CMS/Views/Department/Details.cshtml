@@ -21,8 +21,20 @@
     <h2>Donor for @Model.SelectedDepartment.DepartmentName</h2>
     @foreach (var donor in Model.ResponsibleDonors)
     {
-        <a href="/donor/Details/@donor.DonorID"> @donor.FirstName @donor.LastName</a>
+        <a href="/donor/Details/@donor.DonorID"> @donor.FirstName @donor.LastName</a> 
+        <a style="color:red;" href="/Department/Unassociate/@Model.SelectedDepartment.DepartmentID?DonorID=@donor.DonorID">[X]</a><br />
 
     }
-
+    <div>
+        <h4>Add new Donor for @Model.SelectedDepartment.DepartmentName</h4>
+        <form method="post" action="/Department/Associate/@Model.SelectedDepartment.DepartmentID">
+            <select name="DonorID">
+                @foreach (var donor in Model.AvailableDonors)
+                {
+                    <option value="@donor.DonorID">@donor.FirstName @donor.LastName</option>
+                }
+            </select>
+            <input type="submit" value="Associate Donor" />
+        </form>
+    </div>
 </div>

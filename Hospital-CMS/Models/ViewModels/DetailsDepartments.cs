@@ -10,5 +10,7 @@ namespace Hospital_CMS.Models.ViewModels
         public DepartmentDto SelectedDepartment { get; set; }
 
         public IEnumerable<DonorDto> ResponsibleDonors { get; set; }
+
+        public IEnumerable<DonorDto> AvailableDonors { get; set; }
     }
 }

@@ -68,10 +68,48 @@ namespace Hospital_CMS.Controllers
 
             ViewModel.ResponsibleDonors = ResponsibleDonors;
 
+            url = "donordata/ListDonorsNotCaringForDepartment/" + id;
+            response = client.GetAsync(url).Result;
+            IEnumerable<DonorDto> AvailableDonors = response.Content.ReadAsAsync<IEnumerable<DonorDto>>().Result;
+
+            ViewModel.AvailableDonors = AvailableDonors;
+
 
             return View(ViewModel);
         }
 
+
+        //POST: Department/Associate/{departmentid}
+        [HttpPost]
+        public ActionResult Associate(int id, int DonorID)
+        {
+
+            string url = "departmentdata/associatedepartmentwithdonor/" + id + "/" + DonorID;
+
+
+            HttpContent content = new StringContent("");
+            content.Headers.ContentType.MediaType = "application/json";
+
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+            return RedirectToAction("Details/" + id);
+
+        }
+
+        //GET: Tree/unAssiciate/{id}donorID=/{donorID}
+        [HttpGet]
+        public ActionResult UnAssociate(int id, int donorID)
+        {
+
+            string url = "departmentdata/unassociatedepartmentwithdonor/" + id + "/" + donorID;
+
+
+            HttpContent content = new StringContent("");
+            content.Headers.ContentType.MediaType = "application/json";
+
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+            return RedirectToAction("Details/" + id);
+
+        }
 
         public ActionResult Error()
         {

@@ -61,6 +61,30 @@ namespace Hospital_CMS.Controllers
             return DonorDtos;
         }
 
+
+        // GET: api/DonorData/ListDonorsNotCaringForDepartment/1
+        [HttpGet]
+        public IEnumerable<DonorDto> ListDonorsNotCaringForDepartment(int id)
+        {
+            List<Donor> Donors = db.Donors.Where(
+                a => !a.Departments.Any(
+                    d => d.DepartmentID == id)
+
+                ).ToList();
+            List<DonorDto> DonorDtos = new List<DonorDto>();
+
+            Donors.ForEach(a => DonorDtos.Add(new DonorDto()
+            {
+                DonorID = a.DonorID,
+                FirstName = a.FirstName,
+                LastName = a.LastName
+
+            }));
+
+
+            return DonorDtos;
+        }
+
         // GET: api/DonorData/FindDonor/5
         [ResponseType(typeof(Donor))]
         [HttpGet]
