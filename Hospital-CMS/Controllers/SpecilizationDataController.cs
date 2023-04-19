@@ -16,6 +16,18 @@ namespace Hospital_CMS.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+
+        /// <summary>
+        /// Returns all specilization in the system.
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: all Specilization in the database, including their doctor.
+        /// </returns>
+        /// <example>
+        /// GET: api/SpecilizationData/ListSpecilization
+        /// </example>
+
         // GET: api/SpecilizationData/ListSpecilization
         //curl https://localhost:44370/api/SpecilizationData/ListSpecilization
         [HttpGet]
@@ -34,9 +46,15 @@ namespace Hospital_CMS.Controllers
         }
 
         /// <summary>
-        /// Gather information about all doctor realated to particular specilizatin id
+        /// Gather information about all Specilization realated to particular doctor id
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: all Specilization in the database, including their doctor matched with a particular specilization ID </returns>
+        ///  <param name="id">Specilization ID.</param>
+        /// <example>
+        /// GET: api/SpecilizationData/ListSpecilization
+        /// </example>
 
 
         // GET: api/SpecilizationData/ListSpecilization
@@ -56,6 +74,22 @@ namespace Hospital_CMS.Controllers
 
             return SpecilizationDtos;
         }
+
+        /// <summary>
+        /// Returns all specilization in the system.
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: An specilization in the system matching up to the doctor ID primary key
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <param name="id">The specilization key of the doctor</param>
+        /// <example>
+        /// GET: api/SpecilizationData/FindSpecilization/5
+        /// </example>
+        
+
 
         // GET: api/SpecilizationData/FindSpecilization/5
         //curl "https://localhost:44370/api/SpecilizationData/FindSpecilization/1"
@@ -77,6 +111,24 @@ namespace Hospital_CMS.Controllers
 
             return Ok(SpecilizationDto);
         }
+
+
+        /// <summary>
+        /// Updates a particular specilization in the system with POST Data input
+        /// </summary>
+        /// <param name="id">Represents the specilization ID primary key</param>
+        /// <param name="specilization">JSON FORM DATA of an specilization</sparam>
+        /// <returns>
+        /// HEADER: 204 (Success, No Content Response)
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// or
+        /// HEADER: 404 (Not Found)
+        /// </returns>
+        /// <example>
+        /// POST: api/SpecilizationData/UpdateSpecilization/5
+        /// FORM DATA: Specilization JSON Object
+        /// </example>
 
         // POST: api/SpecilizationData/UpdateSpecilization/5
         //curl -d @specilization.json -H "Content-type:application/json" "https://localhost:44370/api/SpecilizationData/UpdateSpecilization/3"
@@ -115,6 +167,21 @@ namespace Hospital_CMS.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Adds an specilization to the system
+        /// </summary>
+        /// <param name="specilization">JSON FORM DATA of an specilization</param>
+        /// <returns>
+        /// HEADER: 201 (Created)
+        /// CONTENT: specilization ID, specilization Data
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// </returns>
+        /// <example>
+        /// POST: api/SpecilizationData/AddSpecilization
+        /// FORM DATA: specilization JSON Object
+        /// </example>
+
         // POST: api/SpecilizationData/AddSpecilization
         //curl -d @specilization.json -H "Content-type:application/json" https://localhost:44370/api/SpecilizationData/AddSpecilization
         [ResponseType(typeof(Specilization))]
@@ -131,6 +198,20 @@ namespace Hospital_CMS.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = specilization.SpecilizationId }, specilization);
         }
+
+        /// <summary>
+        /// Deletes an specilization from the system by it's ID.
+        /// </summary>
+        /// <param name="id">The primary key of the specilization</param>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <example>
+        /// POST: api/SpecilizationData/DeleteSpecilization/5
+        /// FORM DATA: (empty)
+        /// </example>
 
         // POST: api/SpecilizationData/DeleteSpecilization/5
         //curl -d "" https://localhost:44370/api/SpecilizationData/DeleteSpecilization/3

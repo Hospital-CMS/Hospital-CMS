@@ -16,6 +16,16 @@ namespace Hospital_CMS.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// Returns all doctor in the system.
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: all doctor in the database, including their details.
+        /// </returns>
+        /// <example>
+        /// // GET: api/DoctorData/ListDoctors
+        /// </example>
         // GET: api/DoctorData/ListDoctors
         //curl https://localhost:44370/api/DoctorData/ListDoctors
         [HttpGet]
@@ -46,7 +56,8 @@ namespace Hospital_CMS.Controllers
         /// Gather all information about doctor related to particular specilization id
         /// </summary>
         /// <param name="id"> Specilization Id</param>
-        /// <returns></returns>
+        /// <returns> CONTENT: all doctor in the database, including their specilization  matched with a particular Specilization ID</returns>
+        /// <example>GET: api/DoctorData/ListDoctorsForSpecilization/2</example>
 
         // GET: api/DoctorData/ListDoctorsForSpecilization/2
         //curl https://localhost:44370/api/DoctorData/ListDoctors
@@ -75,6 +86,21 @@ namespace Hospital_CMS.Controllers
 
 
 
+        /// <summary>
+        /// Returns all doctor in the system.
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: An doctor in the system matching up to the doctor ID primary key
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <param name="id">The primary key of the doctor</param>
+        /// <example>
+        // GET: api/DoctorData/FindDoctor/5
+        /// </example>
+
+
         // GET: api/DoctorData/FindDoctor/5
         // curl "https://localhost:44370/api/DoctorData/FindDoctor/1"
         [ResponseType(typeof(Doctor))]
@@ -101,6 +127,23 @@ namespace Hospital_CMS.Controllers
 
             return Ok(DoctorDto);
         }
+
+        /// <summary>
+        /// Updates a particular doctor in the system with POST Data input
+        /// </summary>
+        /// <param name="id">Represents the doctor ID primary key</param>
+        /// <param name="doctor">JSON FORM DATA of an doctor</param>
+        /// <returns>
+        /// HEADER: 204 (Success, No Content Response)
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// or
+        /// HEADER: 404 (Not Found)
+        /// </returns>
+        /// <example>
+        /// POST: api/DoctorData/UpdateDoctor/5
+        /// FORM DATA: doctor JSON Object
+        /// </example>
 
         // POST: api/DoctorData/UpdateDoctor/5
         //curl -d @doctor.json -H "Content-type:application/json" "https://localhost:44370/api/DoctorData/updateDoctor/3"
@@ -138,6 +181,21 @@ namespace Hospital_CMS.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Adds an doctor to the system
+        /// </summary>
+        /// <param name="doctor">JSON FORM DATA of an doctor</param>
+        /// <returns>
+        /// HEADER: 201 (Created)
+        /// CONTENT: doctor ID, doctor Data
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// </returns>
+        /// <example>
+        /// POST: api/DoctorData/AddDoctor
+        /// FORM DATA: doctor JSON Object
+        /// </example>
+
         // POST: api/DoctorData/AddDoctor
         //curl -d @doctor.json -H "Content-type:application/json" https://localhost:44370/api/DoctorData/AddDoctor
         [ResponseType(typeof(Doctor))]
@@ -154,6 +212,21 @@ namespace Hospital_CMS.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = doctor.DoctorId }, doctor);
         }
+
+        /// <summary>
+        /// Deletes an doctor from the system by it's ID.
+        /// </summary>
+        /// <param name="id">The primary key of the doctor</param>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <example>
+        /// POST: api/DoctorData/DeleteDoctor/5
+        /// FORM DATA: (empty)
+        /// </example>
+        
 
         // POST: api/DoctorData/DeleteDoctor/5
         //curl -d "" https://localhost:44370/api/DoctorData/DeleteDoctor/2

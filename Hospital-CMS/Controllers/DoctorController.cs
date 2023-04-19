@@ -21,6 +21,8 @@ namespace Hospital_CMS.Controllers
             client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:44370/api/");
         }
+
+       
         // GET: Doctor/List
         public ActionResult List()
         {
@@ -47,8 +49,6 @@ namespace Hospital_CMS.Controllers
             //curl  https://localhost:44370/api/DoctorData/FindDoctor/{id}
 
         
-
-            //old
             string url = "DoctorData/FindDoctor/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
@@ -59,7 +59,7 @@ namespace Hospital_CMS.Controllers
             Debug.WriteLine("doctor recieved");
             Debug.WriteLine(SelectedDoctor.DoctorFirstname);
 
-            //old
+            
             return View(SelectedDoctor);
         }
 
