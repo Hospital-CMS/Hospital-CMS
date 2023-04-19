@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Book an appointment</h2>
+
+<form action="/Appointment/Create" method="POST">
+    <div>
+        <label>Appointment Date:</label> <input type="text" name="Appoinment" />
+    </div>
+    <div>
+        <label>Appointment Type:</label> <input type="text" name="AppointmentType" />
+    </div>
+    <div>
+        <input type="submit" value="Book Appointment" />
+    </div>
+</form>
+

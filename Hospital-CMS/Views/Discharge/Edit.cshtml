@@ -1,0 +1,21 @@
+﻿@model Hospital_CMS.Models.DischargeDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Discharge</h2>
+
+<form action="/Discharge/Update/@Model.DischargeId" method="POST">
+    <div>
+        <input type="hidden" name="DischargeId" value="@Model.DischargeId" />
+    </div>
+    <div>
+        <label>Discharge Number:</label> <input type="text" name="DischargeNo" value="@Model.DischargeNo" />
+    </div>
+    <div>
+        <label>Discharge:</label> <input type="text" name="DischargeType" value="@Model.DischargeType" />
+    </div>
+    <div>
+        <input type="submit" value="Update Discharge" />
+    </div>
+</form>

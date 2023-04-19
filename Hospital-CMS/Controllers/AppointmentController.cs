@@ -17,7 +17,7 @@ namespace Hospital_CMS.Controllers
         static AppointmentController()
         {
             client = new HttpClient();
-            client.BaseAddress = new url("https://localhost:44370/api/");
+            client.url = new url("https://localhost:44370/api/");
         }
 
 

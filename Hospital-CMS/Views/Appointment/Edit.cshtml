@@ -1,0 +1,21 @@
+﻿@model Hospital_CMS.Models.AppointmentDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Appointment</h2>
+
+<form action="/Appointment/Update/@Model.AppointmentId" method="POST">
+    <div>
+        <input type="hidden" name="AppointmentId" value="@Model.AppointmentId" />
+    </div>
+    <div>
+        <label>Appointment Date:</label> <input type="text" name="AppointmentDate" value="@Model.Appointmentdate" />
+    </div>
+    <div>
+        <label>Appointment</label> <input type="text" name="AppointmentType" value="@Model.Appointment  Type" />
+    </div>
+    <div>
+        <input type="submit" value="Update Appointment" />
+    </div>
+</form>

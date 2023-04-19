@@ -1,0 +1,11 @@
+@model IEnumerable<Hospital_CMS.Models.AppointmentDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach (var appointment in Model)
+{
+    <h2><a href="/Room/Details/@appointment.AppointmentId">@appointment.Appointmentdate</a></h2>
+    <div>Room Type: @appointment.AppointmentType</div>
+}

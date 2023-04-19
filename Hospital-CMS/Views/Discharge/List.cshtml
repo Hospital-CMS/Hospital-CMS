@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Hospital_CMS.Models.DischargeDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach (var discharge in Model)
+{
+    <h2><a href="/discharge/Details/@discharge.DischargeId">@discharge.DischargeNo</a></h2>
+    <div>Discharge @discharge.DischargeType</div>
+}

@@ -1,0 +1,16 @@
+﻿@model Hospital_CMS.Models.DischargeDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Cancel Discharge</h2>
+
+<h2>Are you sure you want to delete this discharge?</h2>
+<a href="/Discharge/List">Cancel</a>
+
+<h1>@Model.DischargeId. @Model.DischargeNo</h1>
+
+<form action="/Discharge/Delete/@Model.DischargeId" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>
+

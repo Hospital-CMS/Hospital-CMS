@@ -17,7 +17,7 @@ namespace Hospital_CMS.Controllers
         static DischargeController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Url("https://localhost:44370/api/");
+            client.url = new Url("https://localhost:44370/api/");
         }
 
         // GET: Discharge/List
@@ -42,7 +42,7 @@ namespace Hospital_CMS.Controllers
 
             DischargeDto selecteddischarge = response.Content.ReadAsAsync<DischargeDto>().Result;
             Debug.WriteLine("discharge received : ");
-            Debug.WriteLine(selecteddischarge.discharg);
+            Debug.WriteLine(selecteddischarge.discharge);
 
             return View(selecteddischarge);
         }
@@ -57,14 +57,14 @@ namespace Hospital_CMS.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            Debug.WriteLine("the json payload is");
+         
            
             string url = "dischargedata/dischargelist";
 
             
             string jsonpayload = jss.Serialize(discharge);
 
-            Debug.WriteLine(jsonpayload);
+           
 
             HttpContent content = new StringContent(jsonpayload);
             content.Headers.ContentType.MediaType = "application/json";

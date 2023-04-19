@@ -1,0 +1,15 @@
+﻿@model Hospital_CMS.Models.DischargeDto
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="/Discharge/List">Go back to list</a>
+<br />
+<a href="/Discharge/Edit/@Model.DischargeId">Update</a>
+<h2>@Model.DischargeNo</h2>
+<div>Discharge: @Model.DischargeType</div>
+
+<br />
+<a href="/Discharge/DeleteConfirm/@Model.DischargeId">Delete</a>
