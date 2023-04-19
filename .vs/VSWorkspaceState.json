@@ -4,6 +4,7 @@
     "\\Hospital-CMS",
     "\\Hospital-CMS\\Controllers",
     "\\Hospital-CMS\\Models",
+    "\\Hospital-CMS\\Models\\ViewModels",
     "\\Hospital-CMS\\Views",
     "\\Hospital-CMS\\Views\\Patient"
   ],

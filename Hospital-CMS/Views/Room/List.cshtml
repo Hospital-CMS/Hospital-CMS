@@ -4,8 +4,9 @@
 }
 
 <h2>List</h2>
-@foreach (var room in Model)
-{
-    <h2><a href="/Room/Details/@room.RoomId">@room.RoomNo</a></h2>
-    <div>Room Type: @room.RoomType</div>
-}
+<button type="submit" style="background: #129820; border-radius: 5px;"><a style="color:#ffffff;" href="/Room/New">New Room</a></button>
+    @foreach (var room in Model)
+    {
+        <h2><a href="/Room/Details/@room.RoomId">@room.RoomNo</a></h2>
+        <div>Room Type: @room.RoomType</div>
+    }

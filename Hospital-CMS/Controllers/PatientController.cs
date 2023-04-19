@@ -6,7 +6,9 @@ using System.Web.Mvc;
 using System.Net.Http;
 using System.Diagnostics;
 using Hospital_CMS.Models;
+using Hospital_CMS.Models.ViewModels;
 using System.Web.Script.Serialization;
+
 
 
 namespace Hospital_CMS.Controllers
@@ -66,7 +68,15 @@ namespace Hospital_CMS.Controllers
         // GET: Patient/New
         public ActionResult New()
         {
-            return View();
+            //information about all rooms in the system.
+            //GET api/roomdata/listrooms
+
+            string url = "roomdata/listrooms";
+            HttpResponseMessage response = client.GetAsync(url).Result;
+
+            IEnumerable<RoomDto> roomsOptions = response.Content.ReadAsAsync<IEnumerable<RoomDto>>().Result;
+
+            return View(roomsOptions);
         }
 
         // POST: Patient/Create
@@ -102,11 +112,24 @@ namespace Hospital_CMS.Controllers
         // GET: Patient/Edit/5
         public ActionResult Edit(int id)
         {
+            UpdatePatient ViewModel = new UpdatePatient();
+
+            //the existing patient information
             string url = "patientdata/findpatient/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
-            PatientDto selectedpatient = response.Content.ReadAsAsync<PatientDto>().Result;
+            PatientDto SelectedPatient = response.Content.ReadAsAsync<PatientDto>().Result;
+            ViewModel.SelectedPatient = SelectedPatient;
 
-            return View(selectedpatient);
+            //all rooms to choose from when updating this patient
+
+            //the existing patient information
+            url = "roomdata/listrooms/" + id;
+            response = client.GetAsync(url).Result;
+            IEnumerable<RoomDto> RoomOptions = response.Content.ReadAsAsync<IEnumerable<RoomDto>>().Result;
+
+            ViewModel.RoomOptions = RoomOptions;
+
+            return View(ViewModel);
         }
 
         // POST: Patient/Update/5

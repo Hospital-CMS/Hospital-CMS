@@ -17,10 +17,22 @@ namespace Hospital_CMS.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// Returns all patients in the system
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: all patients in the database. including their associated rooms. 
+        /// </returns>
+        /// <example>
+        /// GET api/PatientData/ListPatients -> {Patient Object}
+        /// </example>
+
         // GET: api/PatientData/ListPatients
         //curl https://localhost:44370/api/patientdata/listpatients
         [HttpGet]
-        public IEnumerable<PatientDto> ListPatients()
+        [ResponseType(typeof(PatientDto))]
+        public IHttpActionResult ListPatients()
         {
             List<Patient> Patients = db.Patients.ToList();
             List<PatientDto> PatientDtos = new List<PatientDto>();
@@ -39,8 +51,60 @@ namespace Hospital_CMS.Controllers
                 RoomType = p.Room.RoomType
             }));
 
-            return PatientDtos;
+            return Ok(PatientDtos);
         }
+
+        /// <summary>
+        /// Gathers information abour all patients related to a particular room Id.
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: all patients in the database. including their associated room. 
+        /// </returns>
+        /// <param name="id">Room Id.</param>
+        /// <example>
+        /// GET api/PatientData/ListPatientsForRoom/3
+        /// </example>
+
+        // GET: api/PatientData/ListPatientsForRoom/3
+        //curl https://localhost:44370/api/patientdata/listpatientsforroom/3
+        [HttpGet]
+        [ResponseType(typeof(PatientDto))]
+        public IHttpActionResult ListPatientsForRoom(int id)
+        {
+            List<Patient> Patients = db.Patients.Where(p=>p.RoomId==id).ToList();
+            List<PatientDto> PatientDtos = new List<PatientDto>();
+
+            Patients.ForEach(p => PatientDtos.Add(new PatientDto()
+            {
+                PatientId = p.PatientId,
+                PFName = p.PFName,
+                PLName = p.PLName,
+                Gender = p.Gender,
+                BirthDate = p.BirthDate,
+                HealthcardNo = p.HealthcardNo,
+                ContactNo = p.ContactNo,
+                RoomId = p.RoomId,
+                RoomNo = p.Room.RoomNo,
+                RoomType = p.Room.RoomType
+            }));
+
+            return Ok(PatientDtos);
+        }
+
+        /// <summary>
+        /// Returns all patient in the system.
+        /// </summary>
+        /// <param name="id">The primary key of the patient</param>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: A patient in the system matching up to the patient ID primary key
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <example>
+        /// GET: api/DoctorData/FindPatient/5
+        /// </example>
 
         // GET: api/PatientData/FindPatient/5
         //curl https://localhost:44370/api/patientdata/findpatient/2
@@ -70,6 +134,23 @@ namespace Hospital_CMS.Controllers
             return Ok(PatientDto);
         }
 
+        /// <summary>
+        /// Updates a particular patient in the system with POST Data input
+        /// </summary>
+        /// <param name="id">Represents the patient ID primary key</param>
+        /// <param name="patient">JSON FORM DATA of a patient</param>
+        /// <returns>
+        /// HEADER: 204 (Success, No Content Response)
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// or
+        /// HEADER: 404 (Not Found)
+        /// </returns>
+        /// <example>
+        /// POST: api/PatientData/UpdatePatient/5
+        /// FORM DATA: patient JSON Object
+        /// </example>
+        
         // POST: api/PatientData/UpdatePatient/5
         //curl -d @patient.json -H "Content-type:application/json" "https://localhost:44370/api/patientdata/updatepatient/6"
         [ResponseType(typeof(void))]
@@ -120,6 +201,21 @@ namespace Hospital_CMS.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Adds a patient to the system
+        /// </summary>
+        /// <param name="patient">JSON FORM DATA of a patient</param>
+        /// <returns>
+        /// HEADER: 201 (Created)
+        /// CONTENT: patient ID, patient Data
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// </returns>
+        /// <example>
+        /// POST: api/PatientData/AddPatient
+        /// FORM DATA: patient JSON Object
+        /// </example>
+
         // POST: api/PatientData/AddPatient
         //curl -d @patient.json -H "Content-type:application/json" https://localhost:44370/api/patientdata/addpatient
         [ResponseType(typeof(Patient))]
@@ -136,6 +232,20 @@ namespace Hospital_CMS.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = patient.PatientId }, patient);
         }
+
+        /// <summary>
+        /// Deletes a patient from the system by it's ID.
+        /// </summary>
+        /// <param name="id">The primary key of the patient</param>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <example>
+        /// POST: api/PatientData/DeletePatient/5
+        /// FORM DATA: (empty)
+        /// </example>
 
         // POST: api/PatientData/DeletePatient/5
         //curl -d "" https://localhost:44370/api/patientdata/deletepatient/2

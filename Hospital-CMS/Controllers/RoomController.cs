@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Net.Http;
 using System.Diagnostics;
 using Hospital_CMS.Models;
+using Hospital_CMS.Models.ViewModels;
 using System.Web.Script.Serialization;
 
 namespace Hospital_CMS.Controllers
@@ -45,17 +46,30 @@ namespace Hospital_CMS.Controllers
             //objective: communicate with our room data api to retrieve one room
             //curl https://localhost:44370/api/roomdata/findroom/{id}
 
+            DetailsRoom ViewModel = new DetailsRoom();
+
             string url = "roomdata/findroom/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             Debug.WriteLine("The response code is ");
             Debug.WriteLine(response.StatusCode);
 
-            RoomDto selectedroom = response.Content.ReadAsAsync<RoomDto>().Result;
+            RoomDto SelectedRoom = response.Content.ReadAsAsync<RoomDto>().Result;
             Debug.WriteLine("room received : ");
-            Debug.WriteLine(selectedroom.RoomNo);
+            Debug.WriteLine(SelectedRoom.RoomNo);
 
-            return View(selectedroom);
+            ViewModel.SelectedRoom = SelectedRoom;
+
+            //showcase information about patients related to this room
+            //send a request to gather information about patients related to a particular room ID
+            url = "patientdata/listpatientsforroom/" + id;
+            response = client.GetAsync(url).Result;
+            IEnumerable<PatientDto> RelatedPatients = response.Content.ReadAsAsync<IEnumerable<PatientDto>>().Result; 
+
+            ViewModel.RelatedPatients = RelatedPatients;
+
+
+            return View(ViewModel);
         }
 
         public ActionResult Error()

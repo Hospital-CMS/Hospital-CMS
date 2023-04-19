@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Migrations",
     "\\Models"
   ],
-  "SelectedNode": "\\Models\\Patient.cs",
+  "SelectedNode": "\\Models\\AccountViewModels.cs",
   "PreviewInSolutionExplorer": false
 }
