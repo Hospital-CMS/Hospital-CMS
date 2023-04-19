@@ -4,6 +4,7 @@
 }
 
 <h2>List</h2>
+<a href="/Patient/New">New Patient</a>
 @foreach (var patient in Model)
 {
     <h2><a href="/Patient/Details/@patient.PatientId">@patient.PFName @patient.PLName</a></h2>
