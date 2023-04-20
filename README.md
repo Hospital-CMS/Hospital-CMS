@@ -57,7 +57,7 @@ The Hospital Management System can be accessed by authorized users, such as admi
 
 ## Conclusion
 
-The Hospital Management System is a powerful and flexible system that delivers real benefits to hospitals and their patients. The system's features, including patient registration, computerized appointment and discharge information, unique IDs, search facilities, user-friendly interface, data protection, and fast data processing, make it an essential tool for managing patient records, financial records, legal records, administrative records, and healthcare performance. By using the Hospital Management System, hospitals
+The Hospital Management System is a powerful and flexible system that delivers real benefits to hospitals and their patients. The system's features, including patient registration, computerized appointment and discharge information, unique IDs, search facilities, user-friendly interface, data protection, and fast data processing, make it an essential tool for managing patient records, financial records, legal records, administrative records, and healthcare performance. Overall, by using the Hospital Management System, hospitals can improve their efficiency, reduce errors, and provide better patient care.
 
 
   
