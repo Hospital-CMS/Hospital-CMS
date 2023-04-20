@@ -16,16 +16,16 @@ namespace Hospital_CMS.Models
         public string DepartmentName { get; set; }
         public string Service { get; set; }
 
-        [ForeignKey("Donor")]
-        public int DonorID { get; set; }
+        //[ForeignKey("Donor")]
+       // public int DonorID { get; set; }
 
-        public virtual Donor Donor { get; set; }
+        //public virtual Donor Donor { get; set; }
 
 
-        [ForeignKey("Doctor")]
-        public int DoctorId { get; set; }
+        //[ForeignKey("Doctor")]
+        //public int DoctorId { get; set; }
 
-        public virtual Doctor Doctor { get; set; }
+        //public virtual Doctor Doctor { get; set; }
     }
 
     public class DepartmentDto
