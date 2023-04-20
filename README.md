@@ -35,21 +35,21 @@ The Hospital Management System offers the following features:
 </ul>
 
 
-* **Doctor**: The doctor entity is responsible for the management of doctor-related information, such as their name, contact information, and specialization.
+1. **Doctor**: The doctor entity is responsible for the management of doctor-related information, such as their name, contact information, and specialization.
 
-* **Specialization**: The specialization entity is responsible for the management of doctor specializations. This information is essential for scheduling appointments and managing patient care.
+2. **Specialization**: The specialization entity is responsible for the management of doctor specializations. This information is essential for scheduling appointments and managing patient care.
 
-* **Patient**: The patient entity is responsible for the management of patient-related information, such as their name, contact information, and medical history.
+3. **Patient**: The patient entity is responsible for the management of patient-related information, such as their name, contact information, and medical history.
 
-* **Room**: The room entity is responsible for the management of room-related information, such as its availability and status.
+4. **Room**: The room entity is responsible for the management of room-related information, such as its availability and status.
 
-* **Department**: The department entity is responsible for the management of department-related information, such as its name and contact information.
+5. **Department**: The department entity is responsible for the management of department-related information, such as its name and contact information.
 
-* **Donor**: The donor entity is responsible for the management of donor-related information, such as their name, contact information, and medical history.
+6. **Donor**: The donor entity is responsible for the management of donor-related information, such as their name, contact information, and medical history.
 
-* **Appointment**: The appointment entity is responsible for the management of appointment-related information, such as the date and time of the appointment and the doctor involved.
+7. **Appointment**: The appointment entity is responsible for the management of appointment-related information, such as the date and time of the appointment and the doctor involved.
 
-* **Discharge**: The discharge entity is responsible for the management of discharge-related information, such as the date of discharge and any instructions given to the patient.
+8. **Discharge**: The discharge entity is responsible for the management of discharge-related information, such as the date of discharge and any instructions given to the patient.
 
 ## Access
 
@@ -57,43 +57,6 @@ The Hospital Management System can be accessed by authorized users, such as admi
 
 ## Conclusion
 
-The Hospital Management System is a powerful and flexible system that delivers real benefits to hospitals and their patients. The system's features, including patient registration, computerized appointment and discharge information, unique IDs, search facilities, user-friendly interface, data protection, and fast data processing, make it an essential tool for managing patient records, financial records, legal records, administrative records, and healthcare performance. By using the Hospital Management System, hospitals
-
-**Data protection**: The system is designed to protect patient data and other sensitive information. Access to the system is only granted to authorized users, and data is stored in a secure location.
-
-**Fast data processing**: The system's design ensures that data is processed quickly, allowing for efficient management of patient records, financial records, legal records, administrative records, and healthcare performance.
-
-**Entities**
-<p>In the Hospital Management System includes 8 entities. Each member of the development team is working on two entities to complete the system. The entities and their assigned team members are as follows:.</p>
-
-<ul>
-  <li><strong>Disa:</strong> Doctor, Specilization</li>
-  <li><strong>Rachana:</strong> Patient, Room</li>
-  <li><strong>Nikhil Sarkar:</strong> Department, Donor</li>
-  <li><strong>Gajendra Suwal:</strong> Appointment, Discharge</li>
-</ul>
-
-
-**Doctor**: The doctor entity is responsible for the management of doctor-related information, such as their name, contact information, and specialization.
-
-**Specialization**: The specialization entity is responsible for the management of doctor specializations. This information is essential for scheduling appointments and managing patient care.
-
-**Patient**: The patient entity is responsible for the management of patient-related information, such as their name, contact information, and medical history.
-
-**Room**: The room entity is responsible for the management of room-related information, such as its availability and status.
-
-**Department**: The department entity is responsible for the management of department-related information, such as its name and contact information.
-
-**Donor**: The donor entity is responsible for the management of donor-related information, such as their name, contact information, and medical history.
-
-**Appointment**: The appointment entity is responsible for the management of appointment-related information, such as the date and time of the appointment and the doctor involved.
-
-**Discharge**: The discharge entity is responsible for the management of discharge-related information, such as the date of discharge and any instructions given to the patient.
-
-**Access**
-The Hospital Management System can be accessed by authorized users, such as administrators and receptionists. The system is secured using a username and password authentication system, which ensures that only authorized users can access the system. The system also has role-based access control, which allows for fine-grained control over what each user can access and do within the system.
-
-**Conclusion**
 The Hospital Management System is a powerful and flexible system that delivers real benefits to hospitals and their patients. The system's features, including patient registration, computerized appointment and discharge information, unique IDs, search facilities, user-friendly interface, data protection, and fast data processing, make it an essential tool for managing patient records, financial records, legal records, administrative records, and healthcare performance. By using the Hospital Management System, hospitals
 
 
