@@ -28,8 +28,8 @@ The Hospital Management System offers the following features:
 <p>In the Hospital Management System includes 8 entities. Each member of the development team is working on two entities to complete the system. The entities and their assigned team members are as follows:.</p>
 
 <ul>
-  <li><strong>Disa:</strong> Doctor, Specilization</li>
-  <li><strong>Rachana:</strong> Patient, Room</li>
+  <li><strong>Disa Soni:</strong> Doctor, Specilization</li>
+  <li><strong>Rachana Amin:</strong> Patient, Room</li>
   <li><strong>Nikhil Sarkar:</strong> Department, Donor</li>
   <li><strong>Gajendra Suwal:</strong> Appointment, Discharge</li>
 </ul>
