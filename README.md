@@ -15,3 +15,7 @@
 </ul>
 
 <h2>Rachana:  Patient, Room</h2>
+
+1. **Patient**: The patient entity is responsible for the management of patient-related information, such as their name, contact information, and medical history.
+
+2. **Room**: The room entity is responsible for the management of room-related information, such as its availability and status.
